@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Akshat Kumar | Portfolio</title>
+  <meta name="description" content="AK's developer portfolio – projects, skills, and contact." />
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <!-- SEO basics -->
+  <meta property="og:title" content="AK | Portfolio" />
+  <meta property="og:description" content="Projects, skills, and contact." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts (optional) -->
+   <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+ 
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header>
+    <div class="container nav">
+      <div class="brand" aria-label="AK brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Akshat Kumar • Developer</span>
+      </div>
+
+      <nav aria-label="Primary">
+        <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+        <div class="nav-links" id="desktopNav">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <button id="themeToggle" class="btn secondary" aria-pressed="false" title="Toggle theme">🌙</button>
+        </div>
+      </nav>
+    </div>
+    <div id="mobileMenu" class="container" role="region" aria-label="Mobile menu">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button id="themeToggleMobile" class="btn secondary" aria-pressed="false" title="Toggle theme">🌙 Theme</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1 class="title slide-in">Hi, I'm <span style="color:var(--primary)">Akshat Kumar</span> — a full‑stack dev building clean, fast, real‑world apps.</h1>
+          <p class="subtitle">Currently leveling up frontend fundamentals and shipping mini projects weekly. Open to internships & junior roles.</p>
+          <div class="cta">
+            <a class="btn" href="#projects"> View Projects</a>
+            <a class="btn secondary" href="#contact">Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-img card">
+          <img src="./images/IMG_7678.JPG" alt="AK illustrative avatar placeholder" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container about">
+        <div class="card" style="padding:1.25rem;">
+          <img src="https://placehold.co/900x650/png" alt="Laptop and code placeholder" />
+        </div>
+        <div>
+          <h2>About Me</h2>
+          <p>
+            I'm Akshat, a final‑year CSE student obsessed with turning ideas into usable products. I learn by building,
+            and this portfolio is my public learning log. Right now I'm focused on modern JavaScript, responsive UI,
+            and shipping full‑stack apps with Node & MongoDB.
+          </p>
+          <p class="pill">India • Available for remote</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title">Skills</h2>
+        <div class="grid skills-grid">
+          <div class="card skill">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <strong>HTML & CSS</strong><span class="pill">Intermediate</span>
+            </div>
+            <div class="meter" aria-hidden="true"><div class="bar" style="width:80%"></div></div>
+          </div>
+          <div class="card skill">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <strong>JavaScript (ES6)</strong><span class="pill">Growing</span>
+            </div>
+            <div class="meter" aria-hidden="true"><div class="bar" style="width:65%"></div></div>
+          </div>
+          <div class="card skill">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <strong>Node & Express</strong><span class="pill">Beginner</span>
+            </div>
+            <div class="meter" aria-hidden="true"><div class="bar" style="width:40%"></div></div>
+          </div>
+          <div class="card skill">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <strong>MongoDB</strong><span class="pill">Beginner</span>
+            </div>
+            <div class="meter" aria-hidden="true"><div class="bar" style="width:35%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">Projects</h2>
+        <div class="grid projects-grid">
+          <article class="card project" aria-labelledby="p1-title">
+            <a class="thumb" href="#" aria-label="Todo App preview">
+              <img src="https://placehold.co/800x500/png" alt="Screenshot placeholder of Todo App" />
+            </a>
+            <div class="body">
+              <h3 id="p1-title">Todo App (CRUD + LocalStorage)</h3>
+              <p class="muted">Add, edit, delete tasks with persistent storage.</p>
+              <div class="tags">
+                <span class="pill">HTML</span>
+                <span class="pill">CSS</span>
+                <span class="pill">JS</span>
+              </div>
+            </div>
+          </article>
+          <article class="card project" aria-labelledby="p2-title">
+            <a class="thumb" href="#" aria-label="Weather App preview">
+              <img src="https://placehold.co/800x500/png" alt="Screenshot placeholder of Weather App" />
+            </a>
+            <div class="body">
+              <h3 id="p2-title">Weather App (Fetch API)</h3>
+              <p class="muted">City search, live temp & conditions via public API.</p>
+              <div class="tags">
+                <span class="pill">JS</span>
+                <span class="pill">Fetch</span>
+                <span class="pill">API</span>
+              </div>
+            </div>
+          </article>
+          <article class="card project" aria-labelledby="p3-title">
+            <a class="thumb" href="#" aria-label="Image Gallery preview">
+              <img src="https://placehold.co/800x500/png" alt="Screenshot placeholder of Image Gallery" />
+            </a>
+            <div class="body">
+              <h3 id="p3-title">Image Gallery (Search + Grid)</h3>
+              <p class="muted">Keyword search pulls images and displays responsive grid.</p>
+              <div class="tags">
+                <span class="pill">Grid</span>
+                <span class="pill">JS</span>
+                <span class="pill">API</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Contact</h2>
+        <p class="subtitle">Want to collaborate or hire me? Drop a message — I typically reply within a day.</p>
+        <div class="card" style="padding:1.25rem;">
+          <form id="contactForm" action="mailto:your.email@example.com" method="post" enctype="text/plain">
+            <label>
+              Name
+              <input name="name" type="text" placeholder="Your name" required />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" placeholder="you@example.com" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" placeholder="Tell me about your project..." required></textarea>
+            </label>
+            <div style="display:flex; gap:.75rem; align-items:center;">
+              <button type="submit" class="btn">Send</button>
+              <a class="btn secondary" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <small>© <span id="year"></span> AK. Built with love and lots of caffeine.</small>
+    </div>
+  </footer>    
+</body>
+</html>
