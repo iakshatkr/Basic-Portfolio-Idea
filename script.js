@@ -1,5 +1,5 @@
   // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getUTCFullYea();
 
     // Mobile menu toggle
     const menuBtn = document.getElementById('menuBtn');
@@ -41,3 +41,6 @@
         if (!String(v).trim()) { alert('Please fill all fields.'); e.preventDefault(); return; }
       }
     });
+
+
+  document.getElementById('textbox') 
