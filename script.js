@@ -9,7 +9,7 @@
       menuBtn.setAttribute('aria-expanded', String(open));
     });
 
-    // Theme toggle (light/dark) using CSS variables
+    // Theme toggle (light/dark) using CSS variables only available in phone
     const root = document.documentElement;
     const themeToggles = [
       document.getElementById('themeToggle'),
