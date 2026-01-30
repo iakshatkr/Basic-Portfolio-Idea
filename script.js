@@ -1,8 +1,8 @@
   // Year
-    document.getElementById('year').textContent = new Date().getUTCFullYea();
+    document.getElementById('year').textContent = new Date().getUTCFullYear();
 
     // Mobile menu toggle
-    const menuBtn = document.getElementById('menuBtn');
+    const menuBtn = document.getElementById('menuBtn'); //const is used for the values that doesnt change 
     const mobileMenu = document.getElementById('mobileMenu');
     menuBtn?.addEventListener('click', () => {
       const open = mobileMenu.classList.toggle('open');
