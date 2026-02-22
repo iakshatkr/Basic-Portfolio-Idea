@@ -13,7 +13,7 @@
       --card: #111827;             /* card bg */
       --ring: rgba(14,165,233,.35);/* focus ring */
       --shadow: 0 10px 25px rgba(0,0,0,.35);
-      --radius: 16px; /* learning */ 
+      --radius: 16px;
       --container: 1100px;
       --transition: 180ms;
     }

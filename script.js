@@ -2,7 +2,7 @@
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getUTCFullYear();
 
-    // Mobile menu toggle
+    // Mobile menu toggle 
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     if (menuBtn && mobileMenu) {
@@ -17,7 +17,7 @@
       });
     }
 
-    // Theme toggle (light/dark)
+    // Theme toggle (light/dark) for phone only
     const root = document.documentElement;
     const themeToggles = [
       document.getElementById('themeToggle'),
