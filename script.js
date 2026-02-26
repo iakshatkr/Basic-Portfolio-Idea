@@ -17,12 +17,13 @@
       });
     }
 
-    // Theme toggle (light/dark) for phone only
+    // Theme toggle (light/dark) for phone only 
     const root = document.documentElement;
     const themeToggles = [
       document.getElementById('themeToggle'),
       document.getElementById('themeToggleMobile')
     ].filter(Boolean);
+
 
     function setTheme(mode) {
       if (mode === 'light') root.classList.add('light');
