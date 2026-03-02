@@ -17,7 +17,7 @@
       });
     }
 
-    // Theme toggle (light/dark) for phone only 
+    // Theme toggle (light/dark) for phone only  
     const root = document.documentElement;
     const themeToggles = [
       document.getElementById('themeToggle'),
@@ -36,7 +36,7 @@
       });
     }
 
-    // Initialize theme from localStorage or prefers-color-scheme
+    // Initialize theme from localStorage or prefers-color-scheme 
     const saved = localStorage.getItem('theme');
     const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
     setTheme(saved || (prefersLight ? 'light' : 'dark'));
@@ -71,3 +71,4 @@
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       document.querySelectorAll('.slide-in').forEach(el => el.style.animation = 'none');
     }
+    
