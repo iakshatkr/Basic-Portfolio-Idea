@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeAccessibility();
   initializeSmoothScroll();
   initializeScrollToTop();
+  initializeScrollEffects();
 });
 
 // ============================================================================
@@ -266,10 +267,15 @@ function initializeAccessibility() {
   // Respect prefers-reduced-motion for animations
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.documentElement.style.scrollBehavior = 'auto';
-    document.querySelectorAll('.slide-in, [class*="animate"]').forEach(el => {
+    document.querySelectorAll('.slide-in, [class*="animate"], .section, .card, .project, .nav-links a, .pill, input, textarea').forEach(el => {
       el.style.animation = 'none';
       el.style.transition = 'none';
+      el.style.transform = 'none';
+      el.style.opacity = '1';
     });
+    document.body.style.animation = 'none';
+    document.body.style.opacity = '1';
+    document.body.style.transform = 'none';
     log.info('Reduced motion preferences applied');
   }
 
@@ -340,5 +346,89 @@ function initializeScrollToTop() {
   });
 
   scrollBtn.setAttribute('aria-hidden', 'true');
+}
+
+// ============================================================================
+// Scroll Effects
+// ============================================================================
+
+/**
+ * Initialize scroll-based visual effects
+ */
+function initializeScrollEffects() {
+  const header = document.querySelector('header');
+  const sections = document.querySelectorAll('.section');
+  const scrollProgress = getElement('scrollProgress');
+  const scrollProgressBar = scrollProgress ? scrollProgress.querySelector('.scroll-progress-bar') : null;
+  
+  if (!header) return;
+
+  // Header blur effect on scroll
+  const handleScroll = debounce(() => {
+    const scrollY = window.scrollY;
+    const scrollPercent = (scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    
+    if (scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    // Update scroll progress bar
+    if (scrollProgressBar) {
+      scrollProgressBar.style.width = `${scrollPercent}%`;
+    }
+  }, 10);
+
+  window.addEventListener('scroll', handleScroll);
+
+  // Section animations on scroll
+  if (sections.length > 0 && 'IntersectionObserver' in window) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Add a small delay for staggered animation
+          setTimeout(() => {
+            entry.target.classList.add('animate');
+          }, 100);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    sections.forEach((section, index) => {
+      // Add different animation classes based on position
+      if (index % 3 === 0) {
+        section.classList.add('fade-in');
+      } else if (index % 3 === 1) {
+        section.classList.add('slide-in-left');
+      } else {
+        section.classList.add('slide-in-right');
+      }
+      
+      sectionObserver.observe(section);
+    });
+  } else {
+    // Fallback for browsers without IntersectionObserver
+    sections.forEach(section => {
+      section.classList.add('animate');
+    });
+  }
+
+  // Smooth parallax effect for hero image
+  const heroImg = document.querySelector('.hero-img');
+  if (heroImg) {
+    const handleParallax = debounce(() => {
+      const scrollY = window.scrollY;
+      const rate = scrollY * -0.5;
+      heroImg.style.transform = `translateY(${rate}px)`;
+    }, 10);
+
+    window.addEventListener('scroll', handleParallax);
+  }
+
+  log.info('Scroll effects initialized');
 }
     

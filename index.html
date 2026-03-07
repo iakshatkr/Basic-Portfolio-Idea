@@ -20,6 +20,11 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  
+  <!-- Scroll Progress Indicator -->
+  <div id="scrollProgress" class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-bar"></div>
+  </div>
 
   <!-- Header / Nav -->
   <header>
@@ -52,7 +57,7 @@
   <main id="main">
     <!-- Hero -->
 
-    <section class="hero">
+    <section class="hero section fade-in">
       <div class="container hero-inner">
         <div>
           <h1 class="title slide-in">Full-stack developer focused on building beautiful, user-centric applications.</h1>
@@ -95,25 +100,25 @@
             <div style="display:flex;justify-content:space-between;align-items:center;">
               <strong>HTML & CSS</strong><span class="pill">Intermediate</span>
             </div>
-            <div class="meter" aria-hidden="true"><div class="bar" style="width:80%"></div></div>
+            <div class="meter" aria-hidden="true"><div class="bar" style="--bar-width:80%"></div></div>
           </div>
           <div class="card skill">
             <div style="display:flex;justify-content:space-between;align-items:center;">
               <strong>JavaScript (ES6)</strong><span class="pill">Growing</span>
             </div>
-            <div class="meter" aria-hidden="true"><div class="bar" style="width:65%"></div></div>
+            <div class="meter" aria-hidden="true"><div class="bar" style="--bar-width:65%"></div></div>
           </div>
           <div class="card skill">
             <div style="display:flex;justify-content:space-between;align-items:center;">
               <strong>Node JS & Express</strong><span class="pill">Beginner</span>
             </div>
-            <div class="meter" aria-hidden="true"><div class="bar" style="width:40%"></div></div>
+            <div class="meter" aria-hidden="true"><div class="bar" style="--bar-width:40%"></div></div>
           </div>
           <div class="card skill">
             <div style="display:flex;justify-content:space-between;align-items:center;">
               <strong>MongoDB</strong><span class="pill">Beginner</span>
             </div>
-            <div class="meter" aria-hidden="true"><div class="bar" style="width:35%"></div></div>
+            <div class="meter" aria-hidden="true"><div class="bar" style="--bar-width:35%"></div></div>
           </div>
         </div>
       </div>
