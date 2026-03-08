@@ -133,7 +133,7 @@
     
     .pill:hover {
       transform: translateY(-1px);
-      box-shadow: 0 2px 8px rgba(139,149,103,.2);
+      box-shadow: 0 2px 8px rgba(124, 133, 92, 0.2);
     }
     
     .section { padding: 4.5rem 0; }
@@ -141,7 +141,7 @@
     .section.fade-in {
       opacity: 0;
       transform: translateY(30px);
-      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transition: all 0.8s cubic-bezier(0.26, 0.46, 0.45, 0.94);
     }
     
     .section.fade-in.animate {
@@ -453,6 +453,9 @@
       background: linear-gradient(90deg, var(--primary), var(--primary-2));
       border-radius: 999px;
       transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    .bar.animate {
       animation: fillBar 1.5s ease-out forwards;
     }
     
