@@ -3,7 +3,10 @@ import './style.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import Education from './components/Education';
 import Skills from './components/Skills';
+import Experience from './components/Experience';
+import Connect from './components/Connect';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -47,6 +50,41 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
 
+    // Section animations with IntersectionObserver
+    const sections = document.querySelectorAll('.section');
+    if (sections.length > 0 && 'IntersectionObserver' in window) {
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('animate');
+            }, 100);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      sections.forEach((section, index) => {
+        // Add different animation classes based on position
+        if (index % 3 === 0) {
+          section.classList.add('fade-in');
+        } else if (index % 3 === 1) {
+          section.classList.add('slide-in-left');
+        } else {
+          section.classList.add('slide-in-right');
+        }
+        sectionObserver.observe(section);
+      });
+
+      // Cleanup observer
+      return () => {
+        sectionObserver.disconnect();
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
+
     // Theme change listener
     const themeListener = (e: MediaQueryListEvent) => {
       if (!localStorage.getItem('theme')) {
@@ -86,13 +124,16 @@ function App() {
       <main id="main">
         <Hero />
         <About />
+        <Education />
         <Skills />
+        <Experience />
+        <Connect />
         <Contact />
         {/* Projects section placeholder */}
         <section id="projects" className="section fade-in">
           <div className="container">
-            <h2>Featured Projects</h2>
-            <p className="subtitle">Coming soon! Projects will be showcased here with interactive cards, live demos, and GitHub links.</p>
+            <h2>Production-Ready Applications & System Designs</h2>
+            <p className="subtitle">Full-stack applications, algorithmic solutions, and scalable system architectures. Coming soon with interactive demos and technical deep-dives.</p>
           </div>
         </section>
       </main>

@@ -4,16 +4,13 @@ const About: React.FC = () => {
   return (
     <section id="about" className="section slide-in-left">
       <div className="container about">
-        <div className="card" style={{padding: '1.25rem'}}>
-          <img src="https://placehold.co/900x650/png" alt="Developer workspace with laptop and code" />
-        </div>
         <div>
-          <h2>Crafting Digital Solutions</h2>
+          <h2>Building Scalable Systems & Solving Complex Problems</h2>
           <p>
-            I'm a final-year Computer Science student with a passion for building elegant, user-focused applications. I learn best by creating real products and solving actual problems. My focus is modern JavaScript, responsive UI design, and full-stack development with Node.js and MongoDB.
+            Final-year Computer Science student specializing in distributed systems, algorithm optimization, and full-stack development. I excel at breaking down complex problems into efficient, maintainable solutions using data structures, design patterns, and modern web technologies.
           </p>
           <p>
-            Beyond code, I'm deeply interested in algorithms, data structures, and the principles that make great software great.
+            My expertise spans system architecture, database design, API development, and performance optimization. Currently diving deep into competitive programming, distributed computing, and cloud-native applications.
           </p>
           <p className="pill location">📍 India • Available for Remote Work</p>
         </div>

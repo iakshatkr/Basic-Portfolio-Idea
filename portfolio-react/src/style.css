@@ -40,7 +40,7 @@
       --shadow: 0 2px 8px rgba(0,0,0,.3);
       --shadow-lg: 0 8px 24px rgba(0,0,0,.25);
       --radius: 12px;
-      --container: 1100px;
+      --container: 1400px;
       --transition: 200ms;
     }
     
@@ -68,7 +68,7 @@
     h3 { font-size: 1.25rem; }
 
     /* --------- Utilities --------- */
-    .container { width: min(100% - 2rem, var(--container)); margin-inline: auto; }
+    .container { width: min(100% - 1rem, var(--container)); margin-inline: auto; padding: 0 1rem; }
     .sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
     
     /* Motion blur utility */
@@ -136,7 +136,7 @@
       box-shadow: 0 2px 8px rgba(124, 133, 92, 0.2);
     }
     
-    .section { padding: 4.5rem 0; }
+    .section { padding: 4.5rem 0; width: 100%; }
     
     .section.fade-in {
       opacity: 0;
@@ -277,6 +277,16 @@
       box-shadow: 0 0 0 4px rgba(139,149,103,.15);
     }
     
+    .brand-subtitle {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-top: 0.1rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    
     .nav-links { 
       display: flex; 
       gap: 0.25rem; 
@@ -361,6 +371,7 @@
     /* --------- Hero --------- */
     .hero { 
       padding: 5.5rem 0 3.5rem;
+      width: 100%;
     }
     
     .hero-inner { 

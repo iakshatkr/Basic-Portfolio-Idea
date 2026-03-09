@@ -17,7 +17,10 @@ const Header: React.FC<HeaderProps> = ({ onThemeToggle, isLight }) => {
       <div className="container nav">
         <div className="brand" aria-label="Akshat Kumar">
           <span className="dot" aria-hidden="true"></span>
-          <span>Akshat Kumar</span>
+          <div>
+            <span>Akshat Kumar</span>
+            <span className="brand-subtitle">Full-Stack Developer</span>
+          </div>
         </div>
 
         <nav aria-label="Primary">
@@ -33,8 +36,10 @@ const Header: React.FC<HeaderProps> = ({ onThemeToggle, isLight }) => {
           </button>
           <div className="nav-links" id="desktopNav">
             <a href="#about">About</a>
+            <a href="#education">Education</a>
             <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#connect">Connect</a>
             <a href="#contact">Contact</a>
             <button 
               className="btn secondary" 
