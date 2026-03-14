@@ -1,18 +1,32 @@
 import React from 'react';
+import { focusAreas, profile } from '../content/site';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="section slide-in-left">
-      <div className="container about">
-        <div>
-          <h2>Building Scalable Systems & Solving Complex Problems</h2>
-          <p>
-            Final-year Computer Science student specializing in distributed systems, algorithm optimization, and full-stack development. I excel at breaking down complex problems into efficient, maintainable solutions using data structures, design patterns, and modern web technologies.
+    <section id="about" className="section">
+      <div className="container grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+        <div className="reveal rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-[0_30px_80px_rgba(0,0,0,0.16)]">
+          <span className="section-kicker">Why this portfolio</span>
+          <h2 className="section-title mt-5">A sharper signal for internships, full-time roles, and founder-led opportunities.</h2>
+          <p className="section-copy mt-5">{profile.summary}</p>
+          <p className="section-copy mt-4">
+            I want this site to communicate two things fast: I can build thoughtfully, and I can ship with taste. That means stronger
+            case studies, clearer positioning, and a design language that feels intentional the moment someone lands here.
           </p>
-          <p>
-            My expertise spans system architecture, database design, API development, and performance optimization. Currently diving deep into competitive programming, distributed computing, and cloud-native applications.
-          </p>
-          <p className="pill location">📍 India • Available for Remote Work</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <span className="pill">📍 {profile.location}</span>
+            <span className="pill">{profile.availability}</span>
+          </div>
+        </div>
+
+        <div className="grid gap-4">
+          {focusAreas.map((area) => (
+            <article key={area.title} className="card reveal p-6 sm:p-8">
+              <span className="section-kicker">Focus area</span>
+              <h3 className="mt-3 text-2xl font-semibold text-white">{area.title}</h3>
+              <p className="section-copy mt-4">{area.description}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

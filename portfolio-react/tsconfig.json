@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2015",
     "lib": [
       "dom",
       "dom.iterable",
+      "es2015",
       "esnext"
     ],
     "allowJs": true,
@@ -18,9 +19,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": [
+      "vite/client"
+    ]
   },
   "include": [
-    "src"
+    "src",
+    "src/types"
   ]
 }

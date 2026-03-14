@@ -1,0 +1,28 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#090B0A" />
+  <circle cx="1000" cy="120" r="180" fill="#B5FF7D" fill-opacity="0.12" />
+  <circle cx="180" cy="520" r="140" fill="#FFCF7A" fill-opacity="0.1" />
+  <rect x="72" y="72" width="1056" height="486" rx="36" fill="url(#panel)" stroke="#FFFFFF" stroke-opacity="0.12" />
+  <text x="112" y="176" fill="#B5FF7D" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="6">
+    AKSHAT KUMAR / PORTFOLIO
+  </text>
+  <text x="112" y="292" fill="#F5F7F1" font-family="Arial, sans-serif" font-size="74" font-weight="700">
+    Full-Stack Developer
+  </text>
+  <text x="112" y="374" fill="#F5F7F1" fill-opacity="0.72" font-family="Arial, sans-serif" font-size="30">
+    React, TypeScript, Node.js, product-focused interfaces, and
+  </text>
+  <text x="112" y="416" fill="#F5F7F1" fill-opacity="0.72" font-family="Arial, sans-serif" font-size="30">
+    engineering stories built to stand out on hiring pipelines.
+  </text>
+  <rect x="112" y="468" width="196" height="54" rx="27" fill="#B5FF7D" fill-opacity="0.14" />
+  <text x="146" y="502" fill="#F5F7F1" font-family="Arial, sans-serif" font-size="24" font-weight="600">
+    React / Vite / Three
+  </text>
+  <defs>
+    <linearGradient id="panel" x1="600" y1="72" x2="600" y2="558" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#141918" stop-opacity="0.92" />
+      <stop offset="1" stop-color="#0F1312" stop-opacity="0.82" />
+    </linearGradient>
+  </defs>
+</svg>

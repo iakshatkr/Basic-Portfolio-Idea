@@ -1,100 +1,62 @@
-import React, { useEffect, useState } from 'react';
-
-interface Skill {
-  name: string;
-  level: string;
-  percentage: number;
-  link?: string;
-}
+import React from 'react';
+import { profile, skillGroups } from '../content/site';
 
 const Skills: React.FC = () => {
-  const [animatedBars, setAnimatedBars] = useState<Set<number>>(new Set());
-
-  const skills: Skill[] = [
-    { name: 'HTML & CSS', level: 'Advanced', percentage: 90 },
-    { name: 'JavaScript (ES6+)', level: 'Advanced', percentage: 85 },
-    { name: 'React.js', level: 'Intermediate', percentage: 75 },
-    { name: 'Node.js & Express', level: 'Intermediate', percentage: 70 },
-    { name: 'MongoDB', level: 'Intermediate', percentage: 65 },
-    { name: 'TypeScript', level: 'Intermediate', percentage: 60 },
-    { name: 'DSA & Algorithms', level: 'Growing', percentage: 70, link: 'https://leetcode.com/u/iakshatkr/' },
-    { name: 'Git & Version Control', level: 'Advanced', percentage: 80 }
-  ];
-
-  useEffect(() => {
-    // Animate bars when component comes into view
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = parseInt(entry.target.getAttribute('data-index') || '0');
-            setAnimatedBars(prev => {
-              const newSet = new Set(prev);
-              newSet.add(index);
-              return newSet;
-            });
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    // Observe all skill bars
-    const timeoutId = setTimeout(() => {
-      document.querySelectorAll('.skill-bar').forEach((bar) => {
-        observer.observe(bar);
-      });
-    }, 100);
-
-    return () => {
-      clearTimeout(timeoutId);
-      observer.disconnect();
-    };
-  }, []);
-
   return (
-    <section id="skills" className="section slide-in-right" aria-labelledby="skills-title">
+    <section id="skills" className="section">
       <div className="container">
-        <h2 id="skills-title">Skills & Technologies</h2>
-        <div className="grid skills-grid">
-          {skills.map((skill, index) => (
-            <div key={skill.name} className="card skill">
-              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                <strong>{skill.name}</strong>
-                <span className="pill">{skill.level}</span>
-              </div>
-              <div className="meter" aria-hidden="true">
-                <div
-                  className={`bar skill-bar ${animatedBars.has(index) ? 'animate' : ''}`}
-                  data-index={index}
-                  style={{
-                    width: animatedBars.has(index) ? `${skill.percentage}%` : '0%',
-                    transition: 'width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-                  }}
-                ></div>
-              </div>
-              {skill.link && (
-                <a
-                  href={skill.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="skill-link"
-                  style={{
-                    display: 'inline-block',
-                    marginTop: '0.5rem',
-                    fontSize: '0.9rem',
-                    color: 'var(--primary)',
-                    textDecoration: 'none',
-                    transition: 'color 0.3s ease'
-                  }}
-                  onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary-2)'}
-                  onMouseLeave={(e) => e.currentTarget.style.color = 'var(--primary)'}
-                >
-                  View Profile →
-                </a>
-              )}
+        <div className="reveal mb-12 max-w-3xl">
+          <span className="section-kicker">Technical stack</span>
+          <h2 className="section-title mt-5">Less “look at my percentages,” more “here’s how I actually work.”</h2>
+          <p className="section-copy mt-5">
+            I’m optimizing this portfolio to read like an engineering brand: what I build, how I ship, and where I’m strongest right
+            now.
+          </p>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="grid gap-4 sm:grid-cols-3">
+            {skillGroups.map((group) => (
+              <article key={group.title} className="card reveal p-6">
+                <span className="section-kicker">{group.title}</span>
+                <h3 className="mt-4 text-2xl font-semibold text-white">{group.title}</h3>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span key={item} className="skill-pill">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <aside className="card reveal flex flex-col justify-between p-7">
+            <div>
+              <span className="section-kicker">Signals that matter</span>
+              <h3 className="mt-4 text-3xl font-semibold text-white">Competitive programming stays part of the story.</h3>
+              <p className="section-copy mt-4">
+                It sharpens the way I think about tradeoffs, complexity, and implementation details. That discipline shows up in how I
+                build products too.
+              </p>
             </div>
-          ))}
+
+            <div className="mt-8 rounded-[1.5rem] border border-[#b5ff7d]/20 bg-[#b5ff7d]/8 p-5">
+              <p className="text-sm uppercase tracking-[0.24em] text-[#b5ff7d]/80">Profile</p>
+              <p className="mt-2 text-xl font-semibold text-white">LeetCode / Algorithm practice</p>
+              <a
+                href={profile.leetcode}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center text-sm font-medium text-[#d6ffb3] transition-colors duration-300 hover:text-white"
+              >
+                View profile
+                <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
