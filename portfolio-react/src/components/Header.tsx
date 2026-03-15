@@ -28,8 +28,10 @@ const Header: React.FC = () => {
 
   const navItems = [
     { href: '#about', label: 'About' },
-    { href: '#skills', label: 'Skills' },
+    { href: '#experience', label: 'Experience' },
     { href: '#projects', label: 'Projects' },
+    { href: '#skills', label: 'Skills' },
+    { href: '#education', label: 'Education' },
     { href: '#contact', label: 'Contact' },
   ];
 
@@ -63,10 +65,10 @@ const Header: React.FC = () => {
             ))}
 
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => window.open(profile.resumeUrl, '_blank', 'noopener,noreferrer')}
               className="inline-flex items-center rounded-full border border-white/12 bg-white/6 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:border-[#b5ff7d]/40 hover:bg-white/10"
             >
-              Start a conversation
+              View Resume
             </button>
           </nav>
 
@@ -99,10 +101,10 @@ const Header: React.FC = () => {
 
             <div className="mt-4 border-t border-white/10 pt-4">
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={() => window.open(profile.resumeUrl, '_blank', 'noopener,noreferrer')}
                 className="w-full rounded-2xl border border-white/12 bg-white/5 px-4 py-3 text-left text-sm font-medium text-white"
               >
-                Email {profile.name.split(' ')[0]}
+                Open Resume
               </button>
             </div>
           </nav>

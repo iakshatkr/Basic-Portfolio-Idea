@@ -6,15 +6,15 @@ const About: React.FC = () => {
     <section id="about" className="section">
       <div className="container grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
         <div className="reveal rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-[0_30px_80px_rgba(0,0,0,0.16)]">
-          <span className="section-kicker">Why this portfolio</span>
-          <h2 className="section-title mt-5">A sharper signal for internships, full-time roles, and founder-led opportunities.</h2>
+          <span className="section-kicker">About me</span>
+          <h2 className="section-title mt-5">Building with a developer mindset and presenting with clarity.</h2>
           <p className="section-copy mt-5">{profile.summary}</p>
           <p className="section-copy mt-4">
-            I want this site to communicate two things fast: I can build thoughtfully, and I can ship with taste. That means stronger
-            case studies, clearer positioning, and a design language that feels intentional the moment someone lands here.
+            My work sits at the intersection of code, product presentation, and problem solving. I enjoy turning ideas into responsive
+            web experiences that are easier to use, easier to explain, and stronger to showcase in hiring conversations.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <span className="pill">📍 {profile.location}</span>
+            <span className="pill">{profile.location}</span>
             <span className="pill">{profile.availability}</span>
           </div>
         </div>

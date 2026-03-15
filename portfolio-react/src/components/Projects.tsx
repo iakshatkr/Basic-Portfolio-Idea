@@ -7,10 +7,10 @@ const Projects: React.FC = () => {
       <div className="container">
         <div className="reveal mb-12 max-w-3xl">
           <span className="section-kicker">Selected work</span>
-          <h2 className="section-title mt-5">Projects presented like case studies, not just screenshots and stacks.</h2>
+          <h2 className="section-title mt-5">Projects that reflect product thinking, not just code output.</h2>
           <p className="section-copy mt-5">
-            These are the builds I’m shaping into stronger portfolio stories. The design direction is meant to make the work feel
-            more serious before a recruiter even opens the code.
+            The flagship work now maps directly to the resume: two product-oriented full-stack builds and the portfolio platform itself
+            as a demonstration of engineering presentation.
           </p>
         </div>
 
@@ -49,23 +49,20 @@ const Projects: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-6 flex flex-wrap gap-3">
-                {project.codeUrl ? (
-                  <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="btn secondary">
-                    Code
-                  </a>
-                ) : (
-                  <span className="btn secondary opacity-70">Code link to be added</span>
-                )}
-
-                {project.liveUrl ? (
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn primary">
-                    Live Demo
-                  </a>
-                ) : (
-                  <span className="btn primary opacity-70">Live deployment to be added</span>
-                )}
-              </div>
+              {(project.codeUrl || project.liveUrl) && (
+                <div className="mt-6 flex flex-wrap gap-3">
+                  {project.codeUrl && (
+                    <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="btn secondary">
+                      Code
+                    </a>
+                  )}
+                  {project.liveUrl && (
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn primary">
+                      Live Demo
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           ))}
         </div>

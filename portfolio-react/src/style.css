@@ -321,6 +321,41 @@ p {
   letter-spacing: 0.2em;
 }
 
+.timeline-card {
+  padding: 1.6rem;
+}
+
+.timeline-grid {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.detail-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.detail-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: rgba(245, 247, 241, 0.72);
+  line-height: 1.75;
+}
+
+.detail-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
 .contact-panel {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 2rem;
@@ -344,6 +379,16 @@ p {
   transform: translateY(-2px);
   border-color: rgba(181, 255, 125, 0.22);
   background: rgba(181, 255, 125, 0.08);
+}
+
+.certification-card {
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(181, 255, 125, 0.22);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .footer-link {
@@ -422,6 +467,15 @@ p {
 
   .project-grid {
     grid-template-columns: minmax(0, 1fr) minmax(340px, 0.8fr);
+    align-items: start;
+  }
+
+  .timeline-card {
+    padding: 2rem;
+  }
+
+  .timeline-grid {
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
     align-items: start;
   }
 }

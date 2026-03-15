@@ -10,6 +10,9 @@ const Footer: React.FC = () => {
           <small>© {new Date().getFullYear()} All rights reserved.</small>
         </div>
         <div className="flex flex-wrap gap-4">
+          <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" className="footer-link">
+            Resume
+          </a>
           {socialLinks.map((link) => (
             <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="footer-link">
               {link.label}

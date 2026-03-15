@@ -8,19 +8,22 @@ const Contact: React.FC = () => {
         <div className="contact-panel reveal">
           <div>
             <span className="section-kicker">Contact / Opportunities</span>
-            <h2 className="section-title mt-5 max-w-3xl">Let’s turn this portfolio into something that makes recruiters pause.</h2>
+            <h2 className="section-title mt-5 max-w-3xl">Available for internships, SDE roles, and meaningful conversations.</h2>
             <p className="section-copy mt-5 max-w-2xl">
-              I’m available for internships, early-career SDE roles, and strong project collaborations. If you’re hiring, building,
-              or want to connect, email is the fastest way in.
+              If you are hiring, collaborating, or just want to connect, this section now gives direct access to email, phone, resume,
+              and public profiles without hiding the important stuff behind placeholders.
             </p>
           </div>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-            <a className="btn primary" href={`mailto:${profile.email}`}>
+            <a className="btn primary" href={profile.resumeUrl} target="_blank" rel="noopener noreferrer">
+              Download Resume
+            </a>
+            <a className="btn secondary" href={`mailto:${profile.email}`}>
               Email {profile.name.split(' ')[0]}
             </a>
-            <a className="btn secondary" href={`mailto:${profile.email}?subject=Resume Request`}>
-              Request Resume
+            <a className="btn secondary" href={`tel:${profile.phone.replace(/[^+\d]/g, '')}`}>
+              Call {profile.phone}
             </a>
           </div>
 
@@ -36,6 +39,11 @@ const Contact: React.FC = () => {
               <span className="section-kicker">Email</span>
               <strong className="mt-3 block break-all text-xl text-white">{profile.email}</strong>
               <span className="mt-2 block text-sm text-white/60">Primary contact</span>
+            </div>
+            <div className="social-tile">
+              <span className="section-kicker">Phone</span>
+              <strong className="mt-3 block text-xl text-white">{profile.phone}</strong>
+              <span className="mt-2 block text-sm text-white/60">Direct line</span>
             </div>
           </div>
         </div>
