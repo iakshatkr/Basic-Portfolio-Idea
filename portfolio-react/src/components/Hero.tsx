@@ -14,13 +14,13 @@ const Hero: React.FC = () => {
         <ThreeScene />
       </Suspense>
 
-      <div className="container relative z-10 grid gap-12 py-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div className="reveal">
+      <div className="container hero-layout relative z-10 grid gap-10 py-24 lg:grid-cols-[1fr_1fr] lg:items-start">
+        <div className="reveal hero-copy">
           <span className="section-kicker">Portfolio 2026 / Full-stack engineering</span>
-          <h1 className="mt-6 max-w-4xl text-5xl font-black leading-[0.95] text-white sm:text-6xl lg:text-8xl">
-            Build bold.
-            <span className="block text-[#b5ff7d]">Ship clean.</span>
-            <span className="block text-white/70">Stay memorable.</span>
+          <h1 className="hero-title mt-6">
+            <span className="hero-line hero-line-light">Build bold.</span>
+            <span className="hero-line hero-line-accent">Ship clean.</span>
+            <span className="hero-line hero-line-muted">Stay memorable.</span>
           </h1>
           <p className="section-copy mt-7 max-w-2xl text-base sm:text-lg">
             {profile.headline} I work across frontend, backend, UI thinking, and problem solving, and I am actively looking for
@@ -52,8 +52,8 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="reveal relative">
-          <div className="showcase-panel">
+        <div className="reveal relative hero-panel-wrap">
+          <div className="showcase-panel hero-panel">
             <span className="section-kicker">Current positioning</span>
             <h2 className="mt-4 text-3xl font-bold text-white">Resume-backed profile with product, community, and engineering depth.</h2>
             <p className="section-copy mt-4">
