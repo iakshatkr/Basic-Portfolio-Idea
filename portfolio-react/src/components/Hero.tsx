@@ -18,9 +18,9 @@ const Hero: React.FC = () => {
         <div className="reveal">
           <span className="section-kicker">Portfolio 2026 / Full-stack engineering</span>
           <h1 className="mt-6 max-w-4xl text-5xl font-black leading-[0.95] text-white sm:text-6xl lg:text-8xl">
-            Full-stack developer
-            <span className="block text-[#b5ff7d]">building sharp products</span>
-            <span className="block text-white/70">with clean execution.</span>
+            Build bold.
+            <span className="block text-[#b5ff7d]">Ship clean.</span>
+            <span className="block text-white/70">Stay memorable.</span>
           </h1>
           <p className="section-copy mt-7 max-w-2xl text-base sm:text-lg">
             {profile.headline} I work across frontend, backend, UI thinking, and problem solving, and I am actively looking for
