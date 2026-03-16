@@ -6,7 +6,9 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "report:project": "node scripts/generate-project-report.mjs",
+    "check:project": "npm run build && npm run report:project"
   },
   "dependencies": {
     "gsap": "^3.14.2",
