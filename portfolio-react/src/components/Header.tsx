@@ -44,7 +44,7 @@ const Header: React.FC = () => {
       <div className="container py-4">
         <div className="flex items-center justify-between gap-6">
           <div className="flex items-center space-x-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-sm font-semibold text-white shadow-[0_12px_40px_rgba(0,0,0,0.18)]">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-sm font-semibold text-white shadow-[0_12px_40px_rgba(0,0,0,0.18)] backdrop-blur-xl">
               AK
             </div>
             <div>

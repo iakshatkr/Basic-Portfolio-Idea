@@ -12,6 +12,7 @@
   --highlight: #ffcf7a;
   --stroke: rgba(255, 255, 255, 0.1);
   --shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
+  --shadow-hover: 0 34px 96px rgba(0, 0, 0, 0.28);
   --radius: 28px;
   --container: 1180px;
   --font-body: 'Sora', sans-serif;
@@ -107,14 +108,49 @@ p {
   line-height: 1.8;
 }
 
+.card,
+.metric-card,
+.showcase-panel,
+.contact-panel,
+.social-tile,
+.certification-card,
+.glass-subcard,
+.glass-row {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 260ms ease,
+    background 260ms ease;
+  will-change: transform;
+}
+
+.card::before,
+.metric-card::before,
+.showcase-panel::before,
+.contact-panel::before,
+.social-tile::before,
+.certification-card::before,
+.glass-subcard::before,
+.glass-row::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 34%);
+  opacity: 0.65;
+}
+
 .card {
   border: 1px solid var(--stroke);
   border-radius: var(--radius);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03)),
     rgba(15, 19, 18, 0.72);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(22px);
+  backdrop-filter: blur(20px) saturate(125%);
+  -webkit-backdrop-filter: blur(20px) saturate(125%);
 }
 
 .pill,
@@ -123,12 +159,14 @@ p {
   align-items: center;
   gap: 0.45rem;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.055);
   color: rgba(245, 247, 241, 0.75);
   font-size: 0.78rem;
   font-weight: 600;
   padding: 0.6rem 0.9rem;
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
 }
 
 .skill-pill {
@@ -161,6 +199,8 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.06);
   color: var(--text);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .hero-section {
@@ -249,6 +289,9 @@ p {
   border-radius: 1.4rem;
   background: rgba(255, 255, 255, 0.05);
   padding: 1.15rem 1.1rem;
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
 }
 
 .metric-value {
@@ -269,14 +312,16 @@ p {
 .showcase-panel {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 2rem;
   background:
     radial-gradient(circle at top right, rgba(181, 255, 125, 0.14), transparent 32%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.035)),
-    rgba(15, 19, 18, 0.78);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035)),
+    rgba(15, 19, 18, 0.76);
   padding: 2rem;
   box-shadow: var(--shadow);
+  backdrop-filter: blur(24px) saturate(128%);
+  -webkit-backdrop-filter: blur(24px) saturate(128%);
 }
 
 .hero-panel-wrap {
@@ -294,6 +339,8 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.05);
   padding: 1rem;
+  backdrop-filter: blur(16px) saturate(118%);
+  -webkit-backdrop-filter: blur(16px) saturate(118%);
 }
 
 .showcase-chip-label {
@@ -420,6 +467,8 @@ p {
     rgba(13, 16, 15, 0.84);
   padding: clamp(1.5rem, 4vw, 3rem);
   box-shadow: var(--shadow);
+  backdrop-filter: blur(24px) saturate(128%);
+  -webkit-backdrop-filter: blur(24px) saturate(128%);
 }
 
 .social-tile {
@@ -427,7 +476,8 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.04);
   padding: 1.2rem;
-  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  backdrop-filter: blur(18px) saturate(122%);
+  -webkit-backdrop-filter: blur(18px) saturate(122%);
 }
 
 .social-tile:hover {
@@ -436,14 +486,29 @@ p {
   background: rgba(181, 255, 125, 0.08);
 }
 
-.certification-card {
-  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
-}
-
 .certification-card:hover {
   transform: translateY(-2px);
   border-color: rgba(181, 255, 125, 0.22);
   background: rgba(255, 255, 255, 0.07);
+}
+
+.glass-subcard {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.75rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
+    rgba(255, 255, 255, 0.025);
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+}
+
+.glass-row {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px) saturate(118%);
+  -webkit-backdrop-filter: blur(16px) saturate(118%);
 }
 
 .footer-link {
@@ -504,6 +569,21 @@ p {
 :focus-visible {
   outline: 2px solid rgba(181, 255, 125, 0.65);
   outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover,
+  .metric-card:hover,
+  .showcase-panel:hover,
+  .contact-panel:hover,
+  .social-tile:hover,
+  .certification-card:hover,
+  .glass-subcard:hover,
+  .glass-row:hover {
+    transform: translateY(-4px) scale(1.015);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(255, 255, 255, 0.16);
+  }
 }
 
 @keyframes marquee {
@@ -601,6 +681,13 @@ p {
   .reveal.is-visible,
   .btn,
   .social-tile,
+  .card,
+  .metric-card,
+  .showcase-panel,
+  .contact-panel,
+  .certification-card,
+  .glass-subcard,
+  .glass-row,
   .marquee-track {
     animation: none !important;
     transition: none !important;

@@ -28,7 +28,7 @@ const Projects: React.FC = () => {
                   <p className="section-copy mt-4">{project.description}</p>
                 </div>
 
-                <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6">
+                <div className="glass-subcard p-6">
                   <p className="text-sm uppercase tracking-[0.24em] text-white/45">What stands out</p>
                   <ul className="mt-5 space-y-3 text-sm text-white/72">
                     {project.highlights.map((highlight) => (

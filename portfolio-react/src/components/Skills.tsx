@@ -41,11 +41,11 @@ const Skills: React.FC = () => {
               </p>
             </div>
 
-            <div className="mt-8 rounded-[1.5rem] border border-[#b5ff7d]/20 bg-[#b5ff7d]/8 p-5">
+            <div className="glass-subcard mt-8 p-5">
               <p className="text-sm uppercase tracking-[0.24em] text-[#b5ff7d]/80">Quick snapshot</p>
               <div className="mt-4 grid gap-3">
                 {heroMetrics.map((metric) => (
-                  <div key={metric.label} className="flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                  <div key={metric.label} className="glass-row flex items-center justify-between gap-4 rounded-2xl px-4 py-3">
                     <span className="text-sm text-white/65">{metric.label}</span>
                     <strong className="text-lg text-white">{metric.value}</strong>
                   </div>
