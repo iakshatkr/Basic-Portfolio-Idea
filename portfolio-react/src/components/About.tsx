@@ -5,7 +5,7 @@ const About: React.FC = () => {
   return (
     <section id="about" className="section">
       <div className="container grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-        <div className="glass-subcard reveal rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-[0_30px_80px_rgba(0,0,0,0.16)] backdrop-blur-xl">
+        <div className="glass-subcard reveal rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.16)] backdrop-blur-xl sm:p-8">
           <span className="section-kicker">About me</span>
           <h2 className="section-title mt-5">Building with a developer mindset and presenting with clarity.</h2>
           <p className="section-copy mt-5">{profile.summary}</p>

@@ -14,13 +14,12 @@ const Hero: React.FC = () => {
         <ThreeScene />
       </Suspense>
 
-      <div className="container hero-layout relative z-10 grid gap-10 py-24 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <div className="container hero-layout relative z-10 grid gap-8 py-20 sm:gap-10 sm:py-24 lg:grid-cols-[1fr_1fr] lg:items-start">
         <div className="reveal hero-copy">
           <span className="section-kicker">Portfolio 2026 / Full-stack engineering</span>
           <h1 className="hero-title mt-6">
             <span className="hero-line hero-line-light">Build bold.</span>
             <span className="hero-line hero-line-accent">Ship clean.</span>
-            <span className="hero-line hero-line-muted">Stay memorable.</span>
           </h1>
           <p className="section-copy mt-7 max-w-2xl text-base sm:text-lg">
             {profile.headline} I work across frontend, backend, UI thinking, and problem solving, and I am actively looking for
@@ -55,7 +54,7 @@ const Hero: React.FC = () => {
         <div className="reveal relative hero-panel-wrap">
           <div className="showcase-panel hero-panel">
             <span className="section-kicker">Current positioning</span>
-            <h2 className="mt-4 text-3xl font-bold text-white">Resume-backed profile with product, community, and engineering depth.</h2>
+            <h2 className="mt-4 text-2xl font-bold text-white sm:text-3xl">Resume-backed profile with product, community, and engineering depth.</h2>
             <p className="section-copy mt-4">
               This version is being shaped to showcase your strongest signals clearly: internship experience, developer community
               leadership, full-stack builds, and a cleaner professional narrative.

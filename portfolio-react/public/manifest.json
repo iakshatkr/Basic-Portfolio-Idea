@@ -1,6 +1,6 @@
 {
   "short_name": "Akshat",
-  "name": "Akshat Kumar Portfolio",
+  "name": "Akshat Kumar | Full-Stack Developer Portfolio",
   "icons": [
     {
       "src": "favicon.ico",
@@ -19,7 +19,7 @@
     }
   ],
   "start_url": ".",
-  "display": "standalone",
+  "display": "minimal-ui",
   "theme_color": "#090b0a",
   "background_color": "#090b0a"
 }

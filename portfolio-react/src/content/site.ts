@@ -16,7 +16,7 @@ export const profile = {
 };
 
 export const heroMetrics = [
-  { value: '500+', label: 'DSA problems solved' },
+  { value: 'DSA', label: 'Problem solving and core practice' },
   { value: '1', label: 'Industry internship completed' },
   { value: '2026', label: 'B.Tech graduation year' },
 ];

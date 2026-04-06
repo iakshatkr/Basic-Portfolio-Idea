@@ -26,6 +26,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at top left, rgba(181, 255, 125, 0.12), transparent 28%),
     radial-gradient(circle at 85% 12%, rgba(255, 207, 122, 0.12), transparent 20%),
@@ -178,12 +179,14 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.55rem;
   border-radius: 999px;
   padding: 0.95rem 1.45rem;
   font-size: 0.92rem;
   font-weight: 700;
   letter-spacing: 0.01em;
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+  text-align: center;
 }
 
 .btn:hover {
@@ -296,10 +299,12 @@ p {
 
 .metric-value {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 800;
   line-height: 1;
   color: var(--text);
+  overflow-wrap: anywhere;
+  white-space: nowrap;
 }
 
 .metric-label {
@@ -307,6 +312,7 @@ p {
   color: rgba(245, 247, 241, 0.6);
   font-size: 0.82rem;
   line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .showcase-panel {
@@ -590,6 +596,7 @@ p {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
@@ -648,11 +655,25 @@ p {
   .hero-layout {
     width: min(100% - 2rem, 100%);
   }
+
+  .hero-panel-wrap {
+    padding-top: 0;
+  }
 }
 
 @media (max-width: 640px) {
+  .container {
+    width: min(100% - 1.25rem, var(--container));
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
   .btn {
     width: 100%;
+    min-height: 3.25rem;
+    padding-inline: 1rem;
   }
 
   .metric-card {
@@ -668,7 +689,46 @@ p {
   }
 
   .hero-line {
-    font-size: clamp(3.2rem, 16vw, 4.8rem);
+    font-size: clamp(2.5rem, 14vw, 4rem);
+    line-height: 0.96;
+  }
+
+  .section-kicker {
+    letter-spacing: 0.18em;
+  }
+
+  .showcase-panel,
+  .contact-panel,
+  .card,
+  .glass-subcard {
+    border-radius: 1.5rem;
+  }
+
+  .timeline-card,
+  .project-card {
+    padding: 1.2rem;
+  }
+
+  .social-tile {
+    padding: 1rem;
+  }
+
+  .marquee-shell {
+    margin-top: 2rem;
+  }
+
+  .marquee-item {
+    padding: 0.85rem 0.9rem;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+  }
+
+  .detail-list li {
+    line-height: 1.65;
+  }
+
+  .scroll-progress {
+    height: 2px;
   }
 }
 

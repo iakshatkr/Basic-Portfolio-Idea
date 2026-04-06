@@ -53,12 +53,12 @@ const Header: React.FC = () => {
             </div>
           </div>
 
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-2 md:flex">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href.slice(1))}
-                className="text-sm font-medium text-white/68 transition-colors duration-300 hover:text-white"
+                className="rounded-full px-4 py-2 text-sm font-medium text-white/68 transition-all duration-300 hover:bg-white/6 hover:text-white hover:backdrop-blur-md"
               >
                 {item.label}
               </button>
@@ -66,7 +66,7 @@ const Header: React.FC = () => {
 
             <button
               onClick={() => window.open(profile.resumeUrl, '_blank', 'noopener,noreferrer')}
-              className="inline-flex items-center rounded-full border border-white/12 bg-white/6 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:border-[#b5ff7d]/40 hover:bg-white/10"
+              className="inline-flex items-center rounded-full border border-white/12 bg-white/6 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#b5ff7d]/40 hover:bg-white/10"
             >
               View Resume
             </button>

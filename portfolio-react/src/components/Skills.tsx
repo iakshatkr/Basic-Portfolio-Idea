@@ -31,7 +31,7 @@ const Skills: React.FC = () => {
             ))}
           </div>
 
-          <aside className="card reveal flex flex-col justify-between p-7">
+          <aside className="card reveal flex flex-col justify-between p-6 sm:p-7">
             <div>
               <span className="section-kicker">Signals that matter</span>
               <h3 className="mt-4 text-3xl font-semibold text-white">The story is not just tools. It is consistency and range.</h3>
@@ -46,8 +46,8 @@ const Skills: React.FC = () => {
               <div className="mt-4 grid gap-3">
                 {heroMetrics.map((metric) => (
                   <div key={metric.label} className="glass-row flex items-center justify-between gap-4 rounded-2xl px-4 py-3">
-                    <span className="text-sm text-white/65">{metric.label}</span>
-                    <strong className="text-lg text-white">{metric.value}</strong>
+                    <span className="min-w-0 text-sm text-white/65">{metric.label}</span>
+                    <strong className="shrink-0 text-base text-white sm:text-lg">{metric.value}</strong>
                   </div>
                 ))}
               </div>

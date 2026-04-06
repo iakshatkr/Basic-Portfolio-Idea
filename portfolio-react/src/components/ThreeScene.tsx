@@ -22,6 +22,13 @@ const ThreeScene: React.FC = () => {
   useEffect(() => {
     if (!mountRef.current) return;
 
+    const isMobileViewport = window.innerWidth < 768;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (isMobileViewport || prefersReducedMotion) {
+      return;
+    }
+
     const width = mountRef.current.clientWidth;
     const height = mountRef.current.clientHeight;
 
@@ -29,12 +36,13 @@ const ThreeScene: React.FC = () => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.setSize(width, height);
     renderer.setClearColor(0x000000, 0);
     mountRef.current.appendChild(renderer.domElement);
 
     // Create particles
-    const particleCount = 100;
+    const particleCount = 56;
     const particlesGeometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const velocities = new Float32Array(particleCount * 3);
@@ -64,7 +72,7 @@ const ThreeScene: React.FC = () => {
 
     // Add some floating geometric shapes
     const shapes: FloatingShape[] = [];
-    const shapeCount = 15;
+    const shapeCount = 8;
 
     for (let i = 0; i < shapeCount; i++) {
       const geometry = Math.random() > 0.5 ?
@@ -171,6 +179,7 @@ const ThreeScene: React.FC = () => {
       const h = mountRef.current.clientHeight;
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
       renderer.setSize(w, h);
     };
 
