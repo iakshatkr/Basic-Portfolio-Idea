@@ -31,6 +31,10 @@ const ThreeScene: React.FC = () => {
 
     const width = mountRef.current.clientWidth;
     const height = mountRef.current.clientHeight;
+    let animationFrameId = 0;
+    let isActive = true;
+    let lastFrameTime = 0;
+    const targetFrameInterval = 1000 / 45;
 
     // Scene setup
     const scene = new THREE.Scene();
@@ -120,10 +124,26 @@ const ThreeScene: React.FC = () => {
       mouseX = (event.clientX / width) * 2 - 1;
       mouseY = -(event.clientY / height) * 2 + 1;
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
-    const animate = () => {
-      requestAnimationFrame(animate);
+    const handleVisibilityChange = () => {
+      isActive = document.visibilityState === 'visible';
+      if (isActive) {
+        lastFrameTime = 0;
+        animate();
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    const animate = (time = 0) => {
+      if (!isActive) return;
+
+      animationFrameId = window.requestAnimationFrame(animate);
+
+      if (time - lastFrameTime < targetFrameInterval) {
+        return;
+      }
+      lastFrameTime = time;
 
       // Animate particles
       const positions = particlesGeometry.attributes.position.array as Float32Array;
@@ -186,8 +206,11 @@ const ThreeScene: React.FC = () => {
     window.addEventListener('resize', handleResize);
 
     return () => {
+      isActive = false;
+      window.cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       mountRef.current?.removeChild(renderer.domElement);
       renderer.dispose();
       particlesGeometry.dispose();

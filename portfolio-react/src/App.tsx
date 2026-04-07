@@ -12,7 +12,13 @@ import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
+      if (ticking) return;
+
+      ticking = true;
+      window.requestAnimationFrame(() => {
       const scrollY = window.scrollY;
       const scrollPercent = (scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
 
@@ -30,9 +36,11 @@ function App() {
       if (scrollProgressBar) {
         scrollProgressBar.style.width = `${scrollPercent}%`;
       }
+        ticking = false;
+      });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
     const observer = new IntersectionObserver(

@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
           <h1 className="hero-title mt-6">
             <span className="hero-line hero-line-light">Build bold.</span>
             <span className="hero-line hero-line-accent">Ship clean.</span>
-          </h1>
+           </h1>
           <p className="section-copy mt-7 max-w-2xl text-base sm:text-lg">
             {profile.headline} I work across frontend, backend, UI thinking, and problem solving, and I am actively looking for
             internships and entry-level SDE opportunities.
@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
             </a>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          <div className="hero-metrics mt-10 grid gap-4 sm:grid-cols-3">
             {heroMetrics.map((metric) => (
               <div key={metric.label} className="metric-card">
                 <p className="metric-value">{metric.value}</p>
