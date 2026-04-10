@@ -7,10 +7,10 @@ const Projects: React.FC = () => {
       <div className="container">
         <div className="reveal mb-12 max-w-3xl">
           <span className="section-kicker">Selected work</span>
-          <h2 className="section-title mt-5">Projects that reflect product thinking, not just code output.</h2>
+          <h2 className="section-title mt-5">Projects framed around product thinking, not just feature lists.</h2>
           <p className="section-copy mt-5">
-            The flagship work now maps directly to the resume: two product-oriented full-stack builds and the portfolio platform itself
-            as a demonstration of engineering presentation.
+            The flagship work maps directly to the resume: product-oriented builds with a clearer explanation of why they matter,
+            what they solve, and how they were executed.
           </p>
         </div>
 

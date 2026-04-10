@@ -1,9 +1,9 @@
 export const profile = {
   name: 'Akshat Kumar',
   role: 'Full-Stack Developer',
-  headline: 'Full-stack developer building responsive products, strong frontend experiences, and practical backend systems.',
+  headline: 'Full-stack developer crafting polished interfaces, practical backend systems, and product experiences that feel ready for real users.',
   summary:
-    'Final-year B.Tech Computer Science student at Sarala Birla University with experience across web development, UI/UX, community leadership, and product-focused full-stack engineering.',
+    'Final-year B.Tech Computer Science student at Sarala Birla University with hands-on internship experience, product-minded frontend work, and a growing full-stack foundation shaped by shipping real projects.',
   location: 'Ranchi, Jharkhand, India',
   availability: 'Open to internships and entry-level SDE roles',
   email: 'akshat04kumar@gmail.com',
@@ -16,7 +16,7 @@ export const profile = {
 };
 
 export const heroMetrics = [
-  { value: 'DSA', label: 'Problem solving and core practice' },
+  { value: '3+', label: 'Product-style builds in active portfolio' },
   { value: '1', label: 'Industry internship completed' },
   { value: '2026', label: 'B.Tech graduation year' },
 ];
@@ -37,15 +37,30 @@ export const tickerItems = [
 export const quickHighlights = [
   {
     label: 'Current focus',
-    value: 'Full-stack products, responsive UI, and better engineering storytelling',
+    value: 'Sharper product execution, cleaner UI systems, and stronger engineering presentation',
   },
   {
-    label: 'Leadership',
-    value: 'Visual Media Head at Google Developer Student Club',
+    label: 'Hiring signal',
+    value: 'Internship delivery, community leadership, and full-stack project depth',
   },
   {
-    label: 'Base',
-    value: 'Ranchi, Jharkhand, with remote-friendly availability',
+    label: 'Working style',
+    value: 'Remote-friendly, collaborative, and comfortable owning both UI and implementation details',
+  },
+];
+
+export const proofPoints = [
+  {
+    title: 'Design-conscious frontend work',
+    description: 'Interfaces built to feel responsive, structured, and easier to trust in the first few seconds.',
+  },
+  {
+    title: 'Full-stack execution',
+    description: 'Experience connecting UI, APIs, auth, and data models into product flows instead of disconnected demos.',
+  },
+  {
+    title: 'Leadership and communication',
+    description: 'Community and media work that adds presentation strength beyond pure engineering output.',
   },
 ];
 
@@ -53,12 +68,12 @@ export const focusAreas = [
   {
     title: 'Full-Stack Product Development',
     description:
-      'Building user-facing experiences in React while wiring backend logic, APIs, authentication, and data layers that support real product flows.',
+      'Building user-facing experiences in React while connecting backend logic, APIs, authentication, and data layers that support real product flows.',
   },
   {
     title: 'Frontend Polish and UI Thinking',
     description:
-      'Bringing structure, layout, and visual clarity into interfaces so they feel clean, responsive, and easier to trust at first glance.',
+      'Bringing hierarchy, layout, and visual clarity into interfaces so they feel premium, responsive, and easier to trust at first glance.',
   },
   {
     title: 'Problem Solving Mindset',
@@ -120,7 +135,7 @@ export const projects = [
     category: 'Clean Tech',
     status: 'Flagship build',
     description:
-      'A B2C solar-powered EV charging platform designed around slot booking, payment flow, and a responsive product experience.',
+      'A clean-tech charging platform concept designed around slot booking, payment flow, and a responsive product experience for EV users.',
     highlights: [
       'Built a web app for real-time slot booking and payment-driven charging workflows.',
       'Developed the frontend with React.js and backend services with Node.js and Express.js.',
@@ -135,7 +150,7 @@ export const projects = [
     category: 'E-commerce',
     status: 'Full-stack build',
     description:
-      'A dropshipping-oriented commerce platform with product browsing, cart, checkout flow, and order-tracking considerations.',
+      'A commerce platform built around catalog browsing, cart flow, checkout journeys, and order-tracking considerations.',
     highlights: [
       'Built a full-stack e-commerce experience for product catalog, cart flow, and checkout.',
       'Created a responsive frontend with React.js and backed it with scalable Node.js and Express APIs.',
@@ -150,7 +165,7 @@ export const projects = [
     category: 'Personal Brand',
     status: 'Shipping now',
     description:
-      'This portfolio itself is being rebuilt as a premium React experience with stronger storytelling, polished visuals, and deploy-ready metadata.',
+      'This portfolio itself is rebuilt as a premium React experience with stronger storytelling, sharper visual hierarchy, and a more hiring-focused narrative.',
     highlights: [
       'Migrated the app from Create React App to Vite for a cleaner production workflow.',
       'Introduced a more premium landing page, content system, and lazy-loaded Three.js hero.',
@@ -198,4 +213,11 @@ export const socialLinks = [
   { label: 'LinkedIn', href: profile.linkedin },
   { label: 'X / Twitter', href: profile.twitter },
   { label: 'LeetCode', href: profile.leetcode },
+];
+
+export const hiringPillars = [
+  'Product-oriented projects',
+  'Responsive UI execution',
+  'Internship-backed experience',
+  'Community leadership',
 ];

@@ -7,10 +7,10 @@ const Experience: React.FC = () => {
       <div className="container">
         <div className="reveal mb-12 max-w-3xl">
           <span className="section-kicker">Experience</span>
-          <h2 className="section-title mt-5">Hands-on work that gives the portfolio real weight.</h2>
+          <h2 className="section-title mt-5">Hands-on work that gives the portfolio credibility, not just polish.</h2>
           <p className="section-copy mt-5">
             Internship experience and community leadership both matter here. One shows delivery in a working environment, the other
-            shows ownership, communication, and consistency.
+            shows ownership, communication, and consistency when working with people.
           </p>
         </div>
 

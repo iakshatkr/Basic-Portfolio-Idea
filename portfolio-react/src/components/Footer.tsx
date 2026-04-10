@@ -7,6 +7,7 @@ const Footer: React.FC = () => {
       <div className="container flex flex-col gap-5 text-sm text-white/52 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="font-medium text-white/72">{profile.name}</p>
+          <p className="mt-1 text-white/45">Full-stack developer focused on premium interfaces and practical product delivery.</p>
           <small>&copy; {new Date().getFullYear()} All rights reserved.</small>
         </div>
         <div className="flex flex-wrap gap-4">
