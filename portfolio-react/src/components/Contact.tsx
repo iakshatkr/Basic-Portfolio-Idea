@@ -8,10 +8,10 @@ const Contact: React.FC = () => {
         <div className="contact-panel reveal">
           <div>
             <span className="section-kicker">Contact / Opportunities</span>
-            <h2 className="section-title mt-5 max-w-3xl">Ready for internships, entry-level roles, and teams that value clean execution.</h2>
+            <h2 className="section-title mt-5 max-w-3xl">Available for internships, SDE roles, and meaningful conversations.</h2>
             <p className="section-copy mt-5 max-w-2xl">
-              If you are hiring, collaborating, or simply want to connect, this section gives direct access to email, phone, resume,
-              and public profiles without hiding the important details behind placeholders.
+              If you are hiring, collaborating, or just want to connect, this section now gives direct access to email, phone, resume,
+              and public profiles without hiding the important stuff behind placeholders.
             </p>
           </div>
 

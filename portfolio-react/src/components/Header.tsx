@@ -38,27 +38,27 @@ const Header: React.FC = () => {
   return (
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'border-b border-white/8 bg-[rgba(5,5,5,0.82)] shadow-[0_18px_60px_rgba(0,0,0,0.42)] backdrop-blur-xl' : 'bg-transparent'
+        isScrolled ? 'bg-[rgba(10,12,11,0.88)] shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl' : 'bg-transparent'
       }`}
     >
       <div className="container py-4">
         <div className="flex items-center justify-between gap-6">
           <div className="flex items-center space-x-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-sm font-semibold text-white shadow-[0_12px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-sm font-semibold text-white shadow-[0_12px_40px_rgba(0,0,0,0.18)] backdrop-blur-xl">
               AK
             </div>
             <div>
               <p className="text-sm font-semibold text-white">{profile.name}</p>
-              <p className="text-xs uppercase tracking-[0.24em] text-white/40">{profile.role}</p>
+              <p className="text-xs uppercase tracking-[0.24em] text-white/50">{profile.role}</p>
             </div>
           </div>
 
-          <nav className="hidden items-center gap-2 rounded-full border border-white/8 bg-white/[0.03] px-2 py-2 backdrop-blur-xl md:flex">
+          <nav className="hidden items-center gap-2 md:flex">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href.slice(1))}
-                className="rounded-full px-4 py-2 text-sm font-medium text-white/60 transition-all duration-300 hover:bg-white/6 hover:text-white hover:backdrop-blur-md"
+                className="rounded-full px-4 py-2 text-sm font-medium text-white/68 transition-all duration-300 hover:bg-white/6 hover:text-white hover:backdrop-blur-md"
               >
                 {item.label}
               </button>
@@ -66,7 +66,7 @@ const Header: React.FC = () => {
 
             <button
               onClick={() => window.open(profile.resumeUrl, '_blank', 'noopener,noreferrer')}
-              className="inline-flex items-center rounded-full border border-white/10 bg-[#f3efe5] px-4 py-2 text-sm font-medium text-[#050505] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white"
+              className="inline-flex items-center rounded-full border border-white/12 bg-white/6 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#b5ff7d]/40 hover:bg-white/10"
             >
               View Resume
             </button>
@@ -88,7 +88,7 @@ const Header: React.FC = () => {
         </div>
 
         <div className={`mt-4 transition-all duration-300 md:hidden ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 overflow-hidden opacity-0'}`}>
-          <nav className="rounded-3xl border border-white/10 bg-[rgba(10,10,10,0.92)] p-4 backdrop-blur-xl">
+          <nav className="rounded-3xl border border-white/10 bg-[rgba(15,17,16,0.92)] p-4 backdrop-blur-xl">
             {navItems.map((item) => (
               <button
                 key={item.href}

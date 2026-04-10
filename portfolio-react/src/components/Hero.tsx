@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { heroMetrics, hiringPillars, profile, proofPoints, quickHighlights, tickerItems } from '../content/site';
+import { heroMetrics, profile, quickHighlights, tickerItems } from '../content/site';
 
 const ThreeScene = lazy(() => import('./ThreeScene'));
 
@@ -18,22 +18,13 @@ const Hero: React.FC = () => {
         <div className="reveal hero-copy">
           <span className="section-kicker">Portfolio 2026 / Full-stack engineering</span>
           <h1 className="hero-title mt-6">
-            <span className="hero-line hero-line-light">Premium frontend.</span>
-            <span className="hero-line hero-line-accent">Practical full-stack.</span>
-            <span className="hero-line hero-line-muted">Built to be remembered.</span>
-          </h1>
+            <span className="hero-line hero-line-light">Build bold.</span>
+            <span className="hero-line hero-line-accent">Ship clean.</span>
+           </h1>
           <p className="section-copy mt-7 max-w-2xl text-base sm:text-lg">
             {profile.headline} I work across frontend, backend, UI thinking, and problem solving, and I am actively looking for
-            internships and entry-level SDE opportunities where product quality matters.
+            internships and entry-level SDE opportunities.
           </p>
-
-          <div className="hero-proof mt-7 flex flex-wrap gap-3">
-            {hiringPillars.map((pillar) => (
-              <span key={pillar} className="pill">
-                {pillar}
-              </span>
-            ))}
-          </div>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" className="btn primary">
@@ -62,23 +53,14 @@ const Hero: React.FC = () => {
 
         <div className="reveal relative hero-panel-wrap">
           <div className="showcase-panel hero-panel">
-            <span className="section-kicker">Why this stands out</span>
-            <h2 className="mt-4 text-2xl font-bold text-white sm:text-3xl">A sharper candidate story from first impression to final section.</h2>
+            <span className="section-kicker">Current positioning</span>
+            <h2 className="mt-4 text-2xl font-bold text-white sm:text-3xl">Resume-backed profile with product, community, and engineering depth.</h2>
             <p className="section-copy mt-4">
-              This version is designed to make hiring teams feel the intent: cleaner UX decisions, stronger product framing, and a
-              clearer read on how you think as a builder.
+              This version is being shaped to showcase your strongest signals clearly: internship experience, developer community
+              leadership, full-stack builds, and a cleaner professional narrative.
             </p>
 
-            <div className="hero-proof-grid mt-8 grid gap-4">
-              {proofPoints.map((item) => (
-                <div key={item.title} className="showcase-chip">
-                  <span className="showcase-chip-label">{item.title}</span>
-                  <strong>{item.description}</strong>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-4 grid gap-4">
+            <div className="mt-8 grid gap-4">
               {quickHighlights.map((item) => (
                 <div key={item.label} className="showcase-chip">
                   <span className="showcase-chip-label">{item.label}</span>

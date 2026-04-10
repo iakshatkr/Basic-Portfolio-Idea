@@ -7,9 +7,9 @@ const Skills: React.FC = () => {
       <div className="container">
         <div className="reveal mb-12 max-w-3xl">
           <span className="section-kicker">Technical stack</span>
-          <h2 className="section-title mt-5">Tools and capability areas presented like strengths, not filler.</h2>
+          <h2 className="section-title mt-5">Tools, stack, and capability areas grounded in the resume.</h2>
           <p className="section-copy mt-5">
-            Instead of generic skill bars, this section reflects the actual languages, frameworks, tooling, and product-oriented
+            Instead of generic skill bars, this section now reflects the actual languages, frameworks, tooling, and product-oriented
             strengths you are bringing into hiring conversations.
           </p>
         </div>
@@ -34,7 +34,7 @@ const Skills: React.FC = () => {
           <aside className="card reveal flex flex-col justify-between p-6 sm:p-7">
             <div>
               <span className="section-kicker">Signals that matter</span>
-              <h3 className="mt-4 text-3xl font-semibold text-white">The stack helps. The hiring signal comes from how it is used.</h3>
+              <h3 className="mt-4 text-3xl font-semibold text-white">The story is not just tools. It is consistency and range.</h3>
               <p className="section-copy mt-4">
                 Problem solving, design awareness, and developer community work all strengthen the way you present yourself beyond a
                 simple stack list.

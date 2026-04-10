@@ -18,7 +18,7 @@ const Education: React.FC = () => {
 
         <div className="reveal">
           <span className="section-kicker">Certifications</span>
-          <h2 className="section-title mt-5">Proof of participation, learning, and forward momentum.</h2>
+          <h2 className="section-title mt-5">Proof of participation, learning, and momentum.</h2>
           <div className="mt-8 grid gap-4">
             {certifications.map((certificate) => (
               <a
