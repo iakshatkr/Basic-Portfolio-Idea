@@ -5,7 +5,7 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="section">
       <div className="container">
-        <div className="reveal mb-12 max-w-3xl">
+        <div data-reveal="slide-up" className="mb-12 max-w-3xl">
           <span className="section-kicker">Selected work</span>
           <h2 className="section-title mt-5">Projects that reflect product thinking, not just code output.</h2>
           <p className="section-copy mt-5">
@@ -16,7 +16,7 @@ const Projects: React.FC = () => {
 
         <div className="grid gap-6">
           {projects.map((project, index) => (
-            <div key={project.title} className="project-card card reveal">
+            <div key={project.title} data-reveal="scale" data-reveal-delay={index * 0.08} className="project-card card">
               <div className="project-grid">
                 <div>
                   <div className="project-meta">

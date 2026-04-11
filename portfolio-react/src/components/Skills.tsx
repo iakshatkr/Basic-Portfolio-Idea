@@ -5,7 +5,7 @@ const Skills: React.FC = () => {
   return (
     <section id="skills" className="section">
       <div className="container">
-        <div className="reveal mb-12 max-w-3xl">
+        <div data-reveal="slide-up" className="mb-12 max-w-3xl">
           <span className="section-kicker">Technical stack</span>
           <h2 className="section-title mt-5">Tools, stack, and capability areas grounded in the resume.</h2>
           <p className="section-copy mt-5">
@@ -16,8 +16,8 @@ const Skills: React.FC = () => {
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="grid gap-4 sm:grid-cols-2">
-            {skillGroups.map((group) => (
-              <article key={group.title} className="card reveal p-6">
+            {skillGroups.map((group, index) => (
+              <article key={group.title} data-reveal="slide-up" data-reveal-delay={index * 0.07} className="card p-6">
                 <span className="section-kicker">{group.title}</span>
                 <h3 className="mt-4 text-2xl font-semibold text-white">{group.title}</h3>
                 <div className="mt-6 flex flex-wrap gap-2">
@@ -31,7 +31,7 @@ const Skills: React.FC = () => {
             ))}
           </div>
 
-          <aside className="card reveal flex flex-col justify-between p-6 sm:p-7">
+          <aside data-reveal="slide-left" className="card flex flex-col justify-between p-6 sm:p-7">
             <div>
               <span className="section-kicker">Signals that matter</span>
               <h3 className="mt-4 text-3xl font-semibold text-white">The story is not just tools. It is consistency and range.</h3>

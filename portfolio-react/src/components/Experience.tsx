@@ -5,7 +5,7 @@ const Experience: React.FC = () => {
   return (
     <section id="experience" className="section">
       <div className="container">
-        <div className="reveal mb-12 max-w-3xl">
+        <div data-reveal="slide-up" className="mb-12 max-w-3xl">
           <span className="section-kicker">Experience</span>
           <h2 className="section-title mt-5">Hands-on work that gives the portfolio real weight.</h2>
           <p className="section-copy mt-5">
@@ -15,8 +15,8 @@ const Experience: React.FC = () => {
         </div>
 
         <div className="grid gap-6">
-          {experience.map((item) => (
-            <article key={`${item.company}-${item.title}`} className="timeline-card card reveal">
+          {experience.map((item, index) => (
+            <article key={`${item.company}-${item.title}`} data-reveal={index % 2 === 0 ? 'slide-right' : 'slide-left'} data-reveal-delay={index * 0.08} className="timeline-card card">
               <div className="timeline-grid">
                 <div>
                   <span className="section-kicker">{item.duration}</span>

@@ -5,7 +5,7 @@ const Education: React.FC = () => {
   return (
     <section id="education" className="section">
       <div className="container grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="card reveal p-7">
+        <div data-reveal="slide-right" className="card p-7">
           <span className="section-kicker">Education</span>
           <h2 className="mt-5 text-3xl font-semibold text-white">{education.degree}</h2>
           <p className="mt-4 text-xl font-medium text-[#d6ffb3]">{education.institution}</p>
@@ -16,13 +16,15 @@ const Education: React.FC = () => {
           <p className="section-copy mt-5">{education.location}</p>
         </div>
 
-        <div className="reveal">
+        <div data-reveal="slide-left">
           <span className="section-kicker">Certifications</span>
           <h2 className="section-title mt-5">Proof of participation, learning, and momentum.</h2>
           <div className="mt-8 grid gap-4">
-            {certifications.map((certificate) => (
+            {certifications.map((certificate, index) => (
               <a
                 key={certificate.title}
+                data-reveal="scale"
+                data-reveal-delay={index * 0.07}
                 href={certificate.link}
                 target="_blank"
                 rel="noopener noreferrer"
