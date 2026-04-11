@@ -5,7 +5,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="section">
       <div className="container">
-        <div data-reveal="scale" className="contact-panel">
+        <div data-reveal="scale" data-tilt className="contact-panel">
           <div>
             <span className="section-kicker">Contact / Opportunities</span>
             <h2 className="section-title mt-5 max-w-3xl">Available for internships, SDE roles, and meaningful conversations.</h2>
@@ -29,18 +29,18 @@ const Contact: React.FC = () => {
 
           <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {socialLinks.map((link, index) => (
-              <a key={link.label} data-reveal="slide-up" data-reveal-delay={index * 0.06} href={link.href} target="_blank" rel="noopener noreferrer" className="social-tile">
+              <a key={link.label} data-reveal="slide-up" data-reveal-delay={index * 0.06} data-tilt href={link.href} target="_blank" rel="noopener noreferrer" className="social-tile">
                 <span className="section-kicker">{link.label}</span>
                 <strong className="mt-3 block text-xl text-white">{link.label}</strong>
                 <span className="mt-2 block text-sm text-white/60">Open profile</span>
               </a>
             ))}
-            <div data-reveal="slide-up" data-reveal-delay="0.24" className="social-tile">
+            <div data-reveal="slide-up" data-reveal-delay="0.24" data-tilt className="social-tile">
               <span className="section-kicker">Email</span>
               <strong className="mt-3 block break-all text-xl text-white">{profile.email}</strong>
               <span className="mt-2 block text-sm text-white/60">Primary contact</span>
             </div>
-            <div data-reveal="slide-up" data-reveal-delay="0.3" className="social-tile">
+            <div data-reveal="slide-up" data-reveal-delay="0.3" data-tilt className="social-tile">
               <span className="section-kicker">Phone</span>
               <strong className="mt-3 block text-xl text-white">{profile.phone}</strong>
               <span className="mt-2 block text-sm text-white/60">Direct line</span>

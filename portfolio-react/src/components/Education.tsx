@@ -5,7 +5,7 @@ const Education: React.FC = () => {
   return (
     <section id="education" className="section">
       <div className="container grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div data-reveal="slide-right" className="card p-7">
+        <div data-reveal="slide-right" data-tilt className="card p-7">
           <span className="section-kicker">Education</span>
           <h2 className="mt-5 text-3xl font-semibold text-white">{education.degree}</h2>
           <p className="mt-4 text-xl font-medium text-[#d6ffb3]">{education.institution}</p>
@@ -28,6 +28,7 @@ const Education: React.FC = () => {
                 href={certificate.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-tilt
                 className="card certification-card p-6"
               >
                 <p className="text-sm uppercase tracking-[0.18em] text-white/45">{certificate.issuer}</p>

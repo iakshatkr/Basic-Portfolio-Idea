@@ -142,6 +142,25 @@ p {
   opacity: 0.65;
 }
 
+[data-tilt] {
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+  transform-style: preserve-3d;
+}
+
+[data-tilt]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(255, 255, 255, 0.16), transparent 36%);
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
 .card {
   border: 1px solid var(--stroke);
   border-radius: var(--radius);
@@ -623,14 +642,22 @@ p {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .card:hover,
-  .metric-card:hover,
-  .showcase-panel:hover,
-  .contact-panel:hover,
-  .social-tile:hover,
-  .certification-card:hover,
-  .glass-subcard:hover,
-  .glass-row:hover {
+  [data-tilt]:hover {
+    transform: perspective(1200px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) translateY(-4px) scale(1.015);
+  }
+
+  [data-tilt]:hover::after {
+    opacity: 1;
+  }
+
+  .card:hover:not([data-tilt]),
+  .metric-card:hover:not([data-tilt]),
+  .showcase-panel:hover:not([data-tilt]),
+  .contact-panel:hover:not([data-tilt]),
+  .social-tile:hover:not([data-tilt]),
+  .certification-card:hover:not([data-tilt]),
+  .glass-subcard:hover:not([data-tilt]),
+  .glass-row:hover:not([data-tilt]) {
     transform: translateY(-4px) scale(1.015);
     box-shadow: var(--shadow-hover);
     border-color: rgba(255, 255, 255, 0.16);

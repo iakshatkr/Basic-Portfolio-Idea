@@ -40,6 +40,8 @@ export const usePortfolioMotion = () => {
       return;
     }
 
+    const cleanups: Array<() => void> = [];
+
     const ctx = gsap.context(() => {
       const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
@@ -112,9 +114,42 @@ export const usePortfolioMotion = () => {
           },
         });
       });
+
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        document.querySelectorAll<HTMLElement>('[data-tilt]').forEach((element) => {
+          const handleMove = (event: MouseEvent) => {
+            const rect = element.getBoundingClientRect();
+            const relativeX = event.clientX - rect.left;
+            const relativeY = event.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateY = ((relativeX - centerX) / rect.width) * 8;
+            const rotateX = ((centerY - relativeY) / rect.height) * 8;
+
+            element.style.setProperty('--pointer-x', `${relativeX}px`);
+            element.style.setProperty('--pointer-y', `${relativeY}px`);
+            element.style.setProperty('--rotate-x', `${rotateX.toFixed(2)}deg`);
+            element.style.setProperty('--rotate-y', `${rotateY.toFixed(2)}deg`);
+          };
+
+          const resetTilt = () => {
+            element.style.setProperty('--rotate-x', '0deg');
+            element.style.setProperty('--rotate-y', '0deg');
+          };
+
+          element.addEventListener('mousemove', handleMove);
+          element.addEventListener('mouseleave', resetTilt);
+
+          cleanups.push(() => {
+            element.removeEventListener('mousemove', handleMove);
+            element.removeEventListener('mouseleave', resetTilt);
+          });
+        });
+      }
     });
 
     return () => {
+      cleanups.forEach((cleanup) => cleanup());
       ctx.revert();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };

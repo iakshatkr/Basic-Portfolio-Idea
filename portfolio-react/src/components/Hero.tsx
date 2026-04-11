@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
 
           <div className="hero-metrics mt-10 grid gap-4 sm:grid-cols-3">
             {heroMetrics.map((metric) => (
-              <div key={metric.label} className="metric-card">
+              <div key={metric.label} data-tilt className="metric-card">
                 <p className="metric-value">{metric.value}</p>
                 <p className="metric-label">{metric.label}</p>
               </div>
@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="relative hero-panel-wrap">
-          <div className="showcase-panel hero-panel">
+          <div data-tilt className="showcase-panel hero-panel">
             <span className="section-kicker">Current positioning</span>
             <h2 className="mt-4 text-2xl font-bold text-white sm:text-3xl">Resume-backed profile with product, community, and engineering depth.</h2>
             <p className="section-copy mt-4">

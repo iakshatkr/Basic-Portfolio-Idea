@@ -16,7 +16,7 @@ const Projects: React.FC = () => {
 
         <div className="grid gap-6">
           {projects.map((project, index) => (
-            <div key={project.title} data-reveal="scale" data-reveal-delay={index * 0.08} className="project-card card">
+            <div key={project.title} data-reveal="scale" data-reveal-delay={index * 0.08} data-tilt className="project-card card">
               <div className="project-grid">
                 <div>
                   <div className="project-meta">
