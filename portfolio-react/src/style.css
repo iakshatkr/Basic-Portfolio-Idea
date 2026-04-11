@@ -78,6 +78,18 @@ p {
 .section {
   position: relative;
   padding: 5.5rem 0;
+  isolation: isolate;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 10% 0 auto;
+  height: 18rem;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.035), transparent 68%);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .section-kicker {
@@ -198,6 +210,8 @@ p {
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
+  position: relative;
+  overflow: hidden;
   border-radius: 999px;
   padding: 0.95rem 1.45rem;
   font-size: 0.92rem;
@@ -207,8 +221,21 @@ p {
   text-align: center;
 }
 
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 15%, rgba(255, 255, 255, 0.24), transparent 60%);
+  transform: translateX(-130%);
+  transition: transform 320ms ease;
+}
+
 .btn:hover {
   transform: translateY(-2px);
+}
+
+.btn:hover::after {
+  transform: translateX(120%);
 }
 
 .btn.primary {
@@ -466,6 +493,20 @@ p {
   padding: 1.5rem;
 }
 
+.project-card:nth-child(odd) {
+  background:
+    radial-gradient(circle at top right, rgba(181, 255, 125, 0.14), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03)),
+    rgba(15, 19, 18, 0.72);
+}
+
+.project-card:nth-child(even) {
+  background:
+    radial-gradient(circle at top left, rgba(255, 207, 122, 0.16), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03)),
+    rgba(15, 19, 18, 0.72);
+}
+
 .project-grid {
   display: grid;
   gap: 1.4rem;
@@ -489,10 +530,21 @@ p {
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.2em;
+  box-shadow: 0 0 0 1px rgba(181, 255, 125, 0.06), 0 18px 36px rgba(181, 255, 125, 0.12);
 }
 
 .timeline-card {
   padding: 1.6rem;
+}
+
+.timeline-card::after,
+.contact-panel::after {
+  content: '';
+  position: absolute;
+  inset: auto 1.4rem 1.4rem 1.4rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(181, 255, 125, 0.34), transparent);
+  pointer-events: none;
 }
 
 .timeline-grid {
@@ -552,6 +604,19 @@ p {
   transform: translateY(-2px);
   border-color: rgba(181, 255, 125, 0.22);
   background: rgba(181, 255, 125, 0.08);
+}
+
+.pill,
+.skill-pill {
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.pill:hover,
+.skill-pill:hover {
+  transform: translateY(-2px);
+  border-color: rgba(181, 255, 125, 0.28);
+  background: rgba(181, 255, 125, 0.13);
+  color: rgba(245, 247, 241, 0.92);
 }
 
 .certification-card:hover {
