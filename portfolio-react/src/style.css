@@ -265,6 +265,7 @@ p {
     linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 32%),
     radial-gradient(circle at 20% 30%, rgba(181, 255, 125, 0.12), transparent 30%);
   pointer-events: none;
+  animation: pulse-noise 14s ease-in-out infinite alternate;
 }
 
 .hero-orb {
@@ -272,6 +273,8 @@ p {
   border-radius: 999px;
   filter: blur(80px);
   pointer-events: none;
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
 }
 
 .hero-orb-a {
@@ -280,6 +283,7 @@ p {
   width: 18rem;
   height: 18rem;
   background: rgba(181, 255, 125, 0.12);
+  animation: drift-orb-a 12s ease-in-out infinite;
 }
 
 .hero-orb-b {
@@ -288,6 +292,35 @@ p {
   width: 14rem;
   height: 14rem;
   background: rgba(255, 207, 122, 0.08);
+  animation: drift-orb-b 15s ease-in-out infinite;
+}
+
+.hero-grid-glow {
+  position: absolute;
+  inset: 7% 10% auto auto;
+  width: min(34rem, 48vw);
+  aspect-ratio: 1;
+  border-radius: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.01)),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: auto, 22px 22px, 22px 22px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 88%);
+  opacity: 0.28;
+  pointer-events: none;
+  animation: grid-float 18s ease-in-out infinite;
+}
+
+.hero-kicker,
+.hero-title,
+.hero-description,
+.hero-actions,
+.hero-metrics,
+.hero-panel,
+.marquee-shell {
+  will-change: transform, opacity;
 }
 
 .metric-card {
@@ -347,6 +380,7 @@ p {
 .hero-panel {
   min-height: 0;
   padding: 1.7rem 2rem;
+  animation: panel-float 9s ease-in-out infinite;
 }
 
 .showcase-chip {
@@ -613,6 +647,69 @@ p {
   }
 }
 
+@keyframes drift-orb-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translate3d(24px, -32px, 0) scale(1.08);
+    opacity: 0.82;
+  }
+}
+
+@keyframes drift-orb-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.48;
+  }
+
+  50% {
+    transform: translate3d(-26px, 24px, 0) scale(1.12);
+    opacity: 0.75;
+  }
+}
+
+@keyframes grid-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: translate3d(12px, -18px, 0) rotate(-2deg);
+    opacity: 0.34;
+  }
+}
+
+@keyframes pulse-noise {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes panel-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
 @media (min-width: 900px) {
   .project-card {
     padding: 2rem;
@@ -670,6 +767,12 @@ p {
   .hero-panel-wrap {
     padding-top: 0;
   }
+
+  .hero-grid-glow {
+    inset: auto auto 12% 50%;
+    width: min(26rem, 80vw);
+    transform: translateX(-50%);
+  }
 }
 
 @media (max-width: 640px) {
@@ -698,6 +801,10 @@ p {
 
   .hero-panel {
     padding: 1.4rem;
+  }
+
+  .hero-grid-glow {
+    display: none;
   }
 
   .hero-line {
@@ -764,7 +871,11 @@ p {
   .certification-card,
   .glass-subcard,
   .glass-row,
-  .marquee-track {
+  .marquee-track,
+  .hero-orb,
+  .hero-grid-glow,
+  .hero-noise,
+  .hero-panel {
     animation: none !important;
     transition: none !important;
     transform: none !important;

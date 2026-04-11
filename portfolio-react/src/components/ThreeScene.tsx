@@ -22,7 +22,7 @@ const ThreeScene: React.FC = () => {
   useEffect(() => {
     if (!mountRef.current) return;
 
-    const isMobileViewport = window.innerWidth < 768;
+    const isMobileViewport = window.innerWidth < 640;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (isMobileViewport || prefersReducedMotion) {
@@ -46,7 +46,7 @@ const ThreeScene: React.FC = () => {
     mountRef.current.appendChild(renderer.domElement);
 
     // Create particles
-    const particleCount = 56;
+    const particleCount = window.innerWidth < 900 ? 40 : 56;
     const particlesGeometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const velocities = new Float32Array(particleCount * 3);
@@ -121,10 +121,15 @@ const ThreeScene: React.FC = () => {
     let mouseX = 0;
     let mouseY = 0;
     const handleMouseMove = (event: MouseEvent) => {
-      mouseX = (event.clientX / width) * 2 - 1;
-      mouseY = -(event.clientY / height) * 2 + 1;
+      mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+      mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+    };
+    const handleMouseLeave = () => {
+      mouseX = 0;
+      mouseY = 0;
     };
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('mouseleave', handleMouseLeave);
 
     const handleVisibilityChange = () => {
       isActive = document.visibilityState === 'visible';
@@ -210,6 +215,7 @@ const ThreeScene: React.FC = () => {
       window.cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseleave', handleMouseLeave);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       mountRef.current?.removeChild(renderer.domElement);
       renderer.dispose();
