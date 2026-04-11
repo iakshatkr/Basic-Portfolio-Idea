@@ -4,7 +4,7 @@ import { profile, socialLinks } from '../content/site';
 const Footer: React.FC = () => {
   return (
     <footer className="border-t border-white/8 py-10">
-      <div className="container flex flex-col gap-5 text-sm text-white/52 md:flex-row md:items-center md:justify-between">
+      <div data-reveal="fade" className="container flex flex-col gap-5 text-sm text-white/52 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="font-medium text-white/72">{profile.name}</p>
           <small>&copy; {new Date().getFullYear()} All rights reserved.</small>

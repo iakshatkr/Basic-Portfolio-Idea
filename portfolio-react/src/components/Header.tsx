@@ -4,6 +4,7 @@ import { profile } from '../content/site';
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [activeSection, setActiveSection] = React.useState('about');
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +13,35 @@ const Header: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  React.useEffect(() => {
+    const sections = ['about', 'experience', 'projects', 'skills', 'education', 'contact']
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => section instanceof HTMLElement);
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+        if (visibleEntries.length === 0) return;
+
+        const topEntry = visibleEntries.reduce((current, entry) =>
+          entry.intersectionRatio > current.intersectionRatio ? entry : current
+        );
+
+        setActiveSection(topEntry.target.id);
+      },
+      {
+        rootMargin: '-30% 0px -45% 0px',
+        threshold: [0.2, 0.35, 0.5, 0.7],
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
   }, []);
 
   const toggleMenu = () => {
@@ -58,7 +88,12 @@ const Header: React.FC = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href.slice(1))}
-                className="rounded-full px-4 py-2 text-sm font-medium text-white/68 transition-all duration-300 hover:bg-white/6 hover:text-white hover:backdrop-blur-md"
+                aria-current={activeSection === item.href.slice(1) ? 'page' : undefined}
+                className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-white/6 hover:text-white hover:backdrop-blur-md ${
+                  activeSection === item.href.slice(1)
+                    ? 'bg-white/8 text-white shadow-[0_12px_34px_rgba(0,0,0,0.18)]'
+                    : 'text-white/68'
+                }`}
               >
                 {item.label}
               </button>
@@ -93,7 +128,10 @@ const Header: React.FC = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href.slice(1))}
-                className="block w-full rounded-2xl px-3 py-3 text-left text-sm font-medium text-white/72 transition-colors duration-300 hover:bg-white/6 hover:text-white"
+                aria-current={activeSection === item.href.slice(1) ? 'page' : undefined}
+                className={`block w-full rounded-2xl px-3 py-3 text-left text-sm font-medium transition-colors duration-300 hover:bg-white/6 hover:text-white ${
+                  activeSection === item.href.slice(1) ? 'bg-white/8 text-white' : 'text-white/72'
+                }`}
               >
                 {item.label}
               </button>
