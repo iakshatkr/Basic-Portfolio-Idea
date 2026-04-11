@@ -9,8 +9,11 @@ import Skills from './components/Skills';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { usePortfolioMotion } from './hooks/useScrollAnimation';
 
 function App() {
+  usePortfolioMotion();
+
   useEffect(() => {
     let ticking = false;
 
@@ -43,24 +46,8 @@ function App() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      },
-      { threshold: 0.18 }
-    );
-
-    document.querySelectorAll('.reveal').forEach((element) => {
-      observer.observe(element);
-    });
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      observer.disconnect();
     };
   }, []);
 

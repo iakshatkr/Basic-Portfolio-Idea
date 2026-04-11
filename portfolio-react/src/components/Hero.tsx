@@ -9,24 +9,25 @@ const Hero: React.FC = () => {
       <div className="hero-noise" aria-hidden="true"></div>
       <div className="hero-orb hero-orb-a" aria-hidden="true"></div>
       <div className="hero-orb hero-orb-b" aria-hidden="true"></div>
+      <div className="hero-grid-glow" aria-hidden="true"></div>
 
       <Suspense fallback={null}>
         <ThreeScene />
       </Suspense>
 
       <div className="container hero-layout relative z-10 grid gap-8 py-20 sm:gap-10 sm:py-24 lg:grid-cols-[1fr_1fr] lg:items-start">
-        <div className="reveal hero-copy">
-          <span className="section-kicker">Portfolio 2026 / Full-stack engineering</span>
+        <div className="hero-copy">
+          <span className="section-kicker hero-kicker">Portfolio 2026 / Full-stack engineering</span>
           <h1 className="hero-title mt-6">
             <span className="hero-line hero-line-light">Build bold.</span>
             <span className="hero-line hero-line-accent">Ship clean.</span>
            </h1>
-          <p className="section-copy mt-7 max-w-2xl text-base sm:text-lg">
+          <p className="section-copy hero-description mt-7 max-w-2xl text-base sm:text-lg">
             {profile.headline} I work across frontend, backend, UI thinking, and problem solving, and I am actively looking for
             internships and entry-level SDE opportunities.
           </p>
 
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+          <div className="hero-actions mt-9 flex flex-col gap-4 sm:flex-row">
             <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" className="btn primary">
               Download Resume
               <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -51,7 +52,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="reveal relative hero-panel-wrap">
+        <div className="relative hero-panel-wrap">
           <div className="showcase-panel hero-panel">
             <span className="section-kicker">Current positioning</span>
             <h2 className="mt-4 text-2xl font-bold text-white sm:text-3xl">Resume-backed profile with product, community, and engineering depth.</h2>
