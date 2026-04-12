@@ -25,7 +25,7 @@ const ThreeScene: React.FC = () => {
     const isMobileViewport = window.innerWidth < 640;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (isMobileViewport || prefersReducedMotion) {
+    if (prefersReducedMotion) {
       return;
     }
 
@@ -34,7 +34,7 @@ const ThreeScene: React.FC = () => {
     let animationFrameId = 0;
     let isActive = true;
     let lastFrameTime = 0;
-    const targetFrameInterval = 1000 / 45;
+    const targetFrameInterval = 1000 / (isMobileViewport ? 28 : 45);
 
     // Scene setup
     const scene = new THREE.Scene();
@@ -47,7 +47,7 @@ const ThreeScene: React.FC = () => {
     mountRef.current.appendChild(renderer.domElement);
 
     // Create particles
-    const particleCount = window.innerWidth < 900 ? 40 : 56;
+    const particleCount = isMobileViewport ? 24 : window.innerWidth < 900 ? 40 : 56;
     const particlesGeometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const velocities = new Float32Array(particleCount * 3);
@@ -66,9 +66,9 @@ const ThreeScene: React.FC = () => {
 
     const particlesMaterial = new THREE.PointsMaterial({
       color: 0xcff7a2,
-      size: window.innerWidth < 900 ? 0.08 : 0.11,
+      size: isMobileViewport ? 0.12 : window.innerWidth < 900 ? 0.08 : 0.11,
       transparent: true,
-      opacity: 0.9,
+      opacity: isMobileViewport ? 0.72 : 0.9,
       blending: THREE.AdditiveBlending,
     });
 
@@ -77,26 +77,26 @@ const ThreeScene: React.FC = () => {
 
     // Add some floating geometric shapes
     const shapes: FloatingShape[] = [];
-    const shapeCount = window.innerWidth < 900 ? 7 : 10;
+    const shapeCount = isMobileViewport ? 4 : window.innerWidth < 900 ? 7 : 10;
     const shapeGroup = new THREE.Group();
 
     for (let i = 0; i < shapeCount; i++) {
       const geometry = Math.random() > 0.5 ?
-        new THREE.TetrahedronGeometry(0.18) :
-        new THREE.OctahedronGeometry(0.15);
+        new THREE.TetrahedronGeometry(isMobileViewport ? 0.22 : 0.18) :
+        new THREE.OctahedronGeometry(isMobileViewport ? 0.18 : 0.15);
 
       const material = new THREE.MeshBasicMaterial({
         color: i % 2 === 0 ? 0xbff58b : 0xffd38c,
         transparent: true,
-        opacity: 0.5,
+        opacity: isMobileViewport ? 0.58 : 0.5,
         wireframe: true,
       });
 
       const shape = new THREE.Mesh(geometry, material);
       shape.position.set(
-        (Math.random() - 0.5) * 15,
-        (Math.random() - 0.5) * 15,
-        (Math.random() - 0.5) * 8
+        (Math.random() - 0.5) * (isMobileViewport ? 11 : 15),
+        (Math.random() - 0.5) * (isMobileViewport ? 12 : 15),
+        (Math.random() - 0.5) * (isMobileViewport ? 6 : 8)
       );
 
       shapes.push({
@@ -107,9 +107,9 @@ const ThreeScene: React.FC = () => {
           z: (Math.random() - 0.5) * 0.005,
         },
         floatSpeed: {
-          x: (Math.random() - 0.5) * 0.002,
-          y: (Math.random() - 0.5) * 0.002,
-          z: (Math.random() - 0.5) * 0.001,
+          x: (Math.random() - 0.5) * (isMobileViewport ? 0.0014 : 0.002),
+          y: (Math.random() - 0.5) * (isMobileViewport ? 0.0014 : 0.002),
+          z: (Math.random() - 0.5) * (isMobileViewport ? 0.0007 : 0.001),
         },
         originalPosition: shape.position.clone(),
       });
@@ -118,7 +118,7 @@ const ThreeScene: React.FC = () => {
     }
     scene.add(shapeGroup);
 
-    camera.position.z = 4.4;
+    camera.position.z = isMobileViewport ? 5.4 : 4.4;
 
     // Mouse interaction
     let mouseX = 0;
@@ -161,12 +161,15 @@ const ThreeScene: React.FC = () => {
         positions[i * 3 + 2] += velocities[i * 3 + 2];
 
         // Wrap around edges
-        if (positions[i * 3] > 10) positions[i * 3] = -10;
-        if (positions[i * 3] < -10) positions[i * 3] = 10;
-        if (positions[i * 3 + 1] > 10) positions[i * 3 + 1] = -10;
-        if (positions[i * 3 + 1] < -10) positions[i * 3 + 1] = 10;
-        if (positions[i * 3 + 2] > 5) positions[i * 3 + 2] = -5;
-        if (positions[i * 3 + 2] < -5) positions[i * 3 + 2] = 5;
+        const maxX = isMobileViewport ? 7 : 10;
+        const maxY = isMobileViewport ? 8 : 10;
+        const maxZ = isMobileViewport ? 4 : 5;
+        if (positions[i * 3] > maxX) positions[i * 3] = -maxX;
+        if (positions[i * 3] < -maxX) positions[i * 3] = maxX;
+        if (positions[i * 3 + 1] > maxY) positions[i * 3 + 1] = -maxY;
+        if (positions[i * 3 + 1] < -maxY) positions[i * 3 + 1] = maxY;
+        if (positions[i * 3 + 2] > maxZ) positions[i * 3 + 2] = -maxZ;
+        if (positions[i * 3 + 2] < -maxZ) positions[i * 3 + 2] = maxZ;
       }
       particlesGeometry.attributes.position.needsUpdate = true;
 
@@ -181,23 +184,30 @@ const ThreeScene: React.FC = () => {
         shape.mesh.position.z += shape.floatSpeed.z;
 
         // Bounce back when too far
-        if (Math.abs(shape.mesh.position.x - shape.originalPosition.x) > 3) {
+        if (Math.abs(shape.mesh.position.x - shape.originalPosition.x) > (isMobileViewport ? 1.8 : 3)) {
           shape.floatSpeed.x *= -1;
         }
-        if (Math.abs(shape.mesh.position.y - shape.originalPosition.y) > 3) {
+        if (Math.abs(shape.mesh.position.y - shape.originalPosition.y) > (isMobileViewport ? 2.2 : 3)) {
           shape.floatSpeed.y *= -1;
         }
-        if (Math.abs(shape.mesh.position.z - shape.originalPosition.z) > 2) {
+        if (Math.abs(shape.mesh.position.z - shape.originalPosition.z) > (isMobileViewport ? 1.2 : 2)) {
           shape.floatSpeed.z *= -1;
         }
       });
 
-      shapeGroup.rotation.y += 0.0012;
-      shapeGroup.rotation.x += 0.00045;
+      shapeGroup.rotation.y += isMobileViewport ? 0.00075 : 0.0012;
+      shapeGroup.rotation.x += isMobileViewport ? 0.0002 : 0.00045;
 
-      // Subtle camera movement based on mouse
-      camera.position.x += (mouseX * 0.7 - camera.position.x) * 0.02;
-      camera.position.y += (mouseY * 0.45 - camera.position.y) * 0.02;
+      if (isMobileViewport) {
+        const driftTime = time * 0.00018;
+        const targetX = Math.sin(driftTime) * 0.22;
+        const targetY = Math.cos(driftTime * 1.3) * 0.16;
+        camera.position.x += (targetX - camera.position.x) * 0.028;
+        camera.position.y += (targetY - camera.position.y) * 0.028;
+      } else {
+        camera.position.x += (mouseX * 0.7 - camera.position.x) * 0.02;
+        camera.position.y += (mouseY * 0.45 - camera.position.y) * 0.02;
+      }
       camera.lookAt(scene.position);
 
       renderer.render(scene, camera);

@@ -857,6 +857,8 @@ p {
 
   .hero-layout {
     width: min(100% - 2rem, 100%);
+    justify-items: center;
+    row-gap: 2rem;
   }
 
   .hero-panel-wrap {
@@ -872,6 +874,48 @@ p {
 
   .section {
     padding: 3.5rem 0;
+  }
+
+  .hero-section {
+    padding-top: 5.25rem;
+  }
+
+  .three-scene-canvas {
+    opacity: 0.72;
+    filter: saturate(1.04) brightness(1.02);
+  }
+
+  .hero-copy {
+    max-width: 100%;
+    margin-inline: auto;
+    text-align: center;
+    padding-top: 0.35rem;
+    padding-right: 0;
+  }
+
+  .hero-title {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .hero-description {
+    margin-inline: auto;
+    max-width: 21rem;
+    text-wrap: balance;
+  }
+
+  .hero-kicker {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-actions {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .hero-metrics {
+    width: 100%;
   }
 
   .btn {
@@ -891,6 +935,11 @@ p {
 
   .hero-panel {
     padding: 1.4rem;
+  }
+
+  .hero-panel-wrap {
+    width: 100%;
+    padding-inline: 0;
   }
 
   .hero-line {
@@ -920,6 +969,7 @@ p {
 
   .marquee-shell {
     margin-top: 2rem;
+    position: relative;
   }
 
   .marquee-item {
