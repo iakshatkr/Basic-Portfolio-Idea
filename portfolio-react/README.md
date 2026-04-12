@@ -32,6 +32,7 @@ Premium React + TypeScript portfolio rebuilt on Vite, with animated section reve
 
 - Restored a more visible Three.js hero layer with brighter particles, larger floating geometry, and explicit canvas stacking in the hero section
 - Realigned the hero glow/grid backing so the right-side panel depth effect follows the card instead of appearing detached
+- Removed the hero backing block entirely to eliminate the visible detached rectangle behind the positioning card
 
 ## Project Structure
 
