@@ -856,6 +856,7 @@ p {
   }
 
   .hero-layout {
+    grid-template-columns: minmax(0, 1fr);
     width: min(100% - 2rem, 100%);
     justify-items: center;
     row-gap: 2rem;
@@ -889,6 +890,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: min(100%, 22rem);
     max-width: 100%;
     margin-inline: auto;
     text-align: center;
@@ -900,6 +902,7 @@ p {
     width: 100%;
     align-items: center;
     max-width: 100%;
+    margin-inline: auto;
     text-align: center;
   }
 
@@ -943,7 +946,7 @@ p {
   }
 
   .hero-panel-wrap {
-    width: 100%;
+    width: min(100%, 22rem);
     padding-inline: 0;
   }
 
