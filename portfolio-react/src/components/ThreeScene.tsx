@@ -43,6 +43,7 @@ const ThreeScene: React.FC = () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.setSize(width, height);
     renderer.setClearColor(0x000000, 0);
+    renderer.domElement.className = 'three-scene-canvas';
     mountRef.current.appendChild(renderer.domElement);
 
     // Create particles
@@ -64,10 +65,10 @@ const ThreeScene: React.FC = () => {
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
     const particlesMaterial = new THREE.PointsMaterial({
-      color: 0x8b9567,
-      size: 0.05,
+      color: 0xcff7a2,
+      size: window.innerWidth < 900 ? 0.08 : 0.11,
       transparent: true,
-      opacity: 0.6,
+      opacity: 0.9,
       blending: THREE.AdditiveBlending,
     });
 
@@ -76,17 +77,18 @@ const ThreeScene: React.FC = () => {
 
     // Add some floating geometric shapes
     const shapes: FloatingShape[] = [];
-    const shapeCount = 8;
+    const shapeCount = window.innerWidth < 900 ? 7 : 10;
+    const shapeGroup = new THREE.Group();
 
     for (let i = 0; i < shapeCount; i++) {
       const geometry = Math.random() > 0.5 ?
-        new THREE.TetrahedronGeometry(0.1) :
-        new THREE.OctahedronGeometry(0.08);
+        new THREE.TetrahedronGeometry(0.18) :
+        new THREE.OctahedronGeometry(0.15);
 
       const material = new THREE.MeshBasicMaterial({
-        color: 0xa4af7a,
+        color: i % 2 === 0 ? 0xbff58b : 0xffd38c,
         transparent: true,
-        opacity: 0.3,
+        opacity: 0.5,
         wireframe: true,
       });
 
@@ -112,10 +114,11 @@ const ThreeScene: React.FC = () => {
         originalPosition: shape.position.clone(),
       });
 
-      scene.add(shape);
+      shapeGroup.add(shape);
     }
+    scene.add(shapeGroup);
 
-    camera.position.z = 5;
+    camera.position.z = 4.4;
 
     // Mouse interaction
     let mouseX = 0;
@@ -189,9 +192,12 @@ const ThreeScene: React.FC = () => {
         }
       });
 
+      shapeGroup.rotation.y += 0.0012;
+      shapeGroup.rotation.x += 0.00045;
+
       // Subtle camera movement based on mouse
-      camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.02;
-      camera.position.y += (mouseY * 0.5 - camera.position.y) * 0.02;
+      camera.position.x += (mouseX * 0.7 - camera.position.x) * 0.02;
+      camera.position.y += (mouseY * 0.45 - camera.position.y) * 0.02;
       camera.lookAt(scene.position);
 
       renderer.render(scene, camera);
@@ -225,13 +231,14 @@ const ThreeScene: React.FC = () => {
         shape.mesh.geometry.dispose();
         shape.mesh.material.dispose();
       });
+      scene.remove(shapeGroup);
     };
   }, []);
 
   return (
     <div
       ref={mountRef}
-      className="absolute inset-0 -z-10"
+      className="three-scene-layer"
       style={{ pointerEvents: 'none' }}
     />
   );

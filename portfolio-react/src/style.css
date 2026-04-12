@@ -255,6 +255,21 @@ p {
   padding-top: 6rem;
 }
 
+.three-scene-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.three-scene-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0.95;
+  filter: saturate(1.08) brightness(1.1);
+  mix-blend-mode: screen;
+}
+
 .hero-layout {
   align-items: start;
   width: min(100% - 1.5rem, 1360px);
@@ -307,6 +322,7 @@ p {
 .hero-noise {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 32%),
     radial-gradient(circle at 20% 30%, rgba(181, 255, 125, 0.12), transparent 30%);
@@ -316,6 +332,7 @@ p {
 
 .hero-orb {
   position: absolute;
+  z-index: 1;
   border-radius: 999px;
   filter: blur(80px);
   pointer-events: none;
@@ -343,6 +360,7 @@ p {
 
 .hero-grid-glow {
   position: absolute;
+  z-index: 1;
   inset: 7% 10% auto auto;
   width: min(34rem, 48vw);
   aspect-ratio: 1;

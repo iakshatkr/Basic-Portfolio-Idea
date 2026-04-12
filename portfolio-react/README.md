@@ -28,6 +28,10 @@ Premium React + TypeScript portfolio rebuilt on Vite, with animated section reve
 - Pointer-responsive spotlight and tilt interactions on key cards
 - Reduced-motion safeguards for accessibility
 
+## Update Log
+
+- Restored a more visible Three.js hero layer with brighter particles, larger floating geometry, and explicit canvas stacking in the hero section
+
 ## Project Structure
 
 - `src/App.tsx` wires the page sections and global page behaviors
