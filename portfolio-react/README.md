@@ -34,6 +34,7 @@ Premium React + TypeScript portfolio rebuilt on Vite, with animated section reve
 - Realigned the hero glow/grid backing so the right-side panel depth effect follows the card instead of appearing detached
 - Removed the hero backing block entirely to eliminate the visible detached rectangle behind the positioning card
 - Improved the mobile hero with centered first-screen layout and a lighter Three.js animation path that stays active on phones
+- Tightened the phone hero alignment further by centering the mobile hero column and title lines explicitly
 
 ## Project Structure
 

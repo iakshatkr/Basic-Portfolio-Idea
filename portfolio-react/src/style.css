@@ -886,6 +886,9 @@ p {
   }
 
   .hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 100%;
     margin-inline: auto;
     text-align: center;
@@ -894,8 +897,10 @@ p {
   }
 
   .hero-title {
+    width: 100%;
     align-items: center;
     max-width: 100%;
+    text-align: center;
   }
 
   .hero-description {
@@ -945,6 +950,8 @@ p {
   .hero-line {
     font-size: clamp(2.5rem, 14vw, 4rem);
     line-height: 0.96;
+    width: 100%;
+    text-align: center;
   }
 
   .section-kicker {
