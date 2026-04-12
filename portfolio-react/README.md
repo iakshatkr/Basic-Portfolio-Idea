@@ -36,6 +36,7 @@ Premium React + TypeScript portfolio rebuilt on Vite, with animated section reve
 - Improved the mobile hero with centered first-screen layout and a lighter Three.js animation path that stays active on phones
 - Tightened the phone hero alignment further by centering the mobile hero column and title lines explicitly
 - Corrected the mobile hero width so the centered layout uses the full phone viewport instead of a left-biased content box
+- Simplified the mobile hero text sizing and width rules so the centered layout stops overflowing and breaking into an awkward left-heavy stack
 
 ## Project Structure
 

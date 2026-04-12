@@ -890,8 +890,8 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: min(100%, 22rem);
-    max-width: 100%;
+    width: 100%;
+    max-width: 19rem;
     margin-inline: auto;
     text-align: center;
     padding-top: 0.35rem;
@@ -899,7 +899,7 @@ p {
   }
 
   .hero-title {
-    width: 100%;
+    width: auto;
     align-items: center;
     max-width: 100%;
     margin-inline: auto;
@@ -908,8 +908,7 @@ p {
 
   .hero-description {
     margin-inline: auto;
-    max-width: 21rem;
-    text-wrap: balance;
+    max-width: 18rem;
   }
 
   .hero-kicker {
@@ -946,19 +945,20 @@ p {
   }
 
   .hero-panel-wrap {
-    width: min(100%, 22rem);
+    width: 100%;
     padding-inline: 0;
   }
 
   .hero-line {
-    font-size: clamp(2.5rem, 14vw, 4rem);
-    line-height: 0.96;
-    width: 100%;
+    font-size: clamp(2rem, 11vw, 3.2rem);
+    line-height: 0.92;
+    width: auto;
     text-align: center;
   }
 
   .section-kicker {
-    letter-spacing: 0.18em;
+    letter-spacing: 0.12em;
+    font-size: 0.66rem;
   }
 
   .showcase-panel,
