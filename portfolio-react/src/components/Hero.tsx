@@ -9,7 +9,6 @@ const Hero: React.FC = () => {
       <div className="hero-noise" aria-hidden="true"></div>
       <div className="hero-orb hero-orb-a" aria-hidden="true"></div>
       <div className="hero-orb hero-orb-b" aria-hidden="true"></div>
-      <div className="hero-grid-glow" aria-hidden="true"></div>
 
       <Suspense fallback={null}>
         <ThreeScene />
@@ -53,6 +52,7 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="relative hero-panel-wrap">
+          <div className="hero-grid-glow" aria-hidden="true"></div>
           <div data-tilt className="showcase-panel hero-panel">
             <span className="section-kicker">Current positioning</span>
             <h2 className="mt-4 text-2xl font-bold text-white sm:text-3xl">Resume-backed profile with product, community, and engineering depth.</h2>

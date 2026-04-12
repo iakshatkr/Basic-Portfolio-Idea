@@ -361,9 +361,9 @@ p {
 .hero-grid-glow {
   position: absolute;
   z-index: 1;
-  inset: 7% 10% auto auto;
-  width: min(34rem, 48vw);
-  aspect-ratio: 1;
+  inset: -2.5rem -1.2rem auto auto;
+  width: calc(100% - 1.6rem);
+  height: calc(100% + 3.4rem);
   border-radius: 2.5rem;
   border: 1px solid rgba(255, 255, 255, 0.07);
   background:
@@ -372,8 +372,9 @@ p {
     linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: auto, 22px 22px, 22px 22px;
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 88%);
-  opacity: 0.28;
+  opacity: 0.22;
   pointer-events: none;
+  box-shadow: 0 36px 100px rgba(181, 255, 125, 0.08);
   animation: grid-float 18s ease-in-out infinite;
 }
 
@@ -437,11 +438,15 @@ p {
 }
 
 .hero-panel-wrap {
+  position: relative;
   align-self: start;
   padding-top: clamp(0.4rem, 1vw, 0.9rem);
+  padding-inline: clamp(0.15rem, 0.6vw, 0.55rem);
 }
 
 .hero-panel {
+  position: relative;
+  z-index: 2;
   min-height: 0;
   padding: 1.7rem 2rem;
   animation: panel-float 9s ease-in-out infinite;
@@ -879,9 +884,9 @@ p {
   }
 
   .hero-grid-glow {
-    inset: auto auto 12% 50%;
-    width: min(26rem, 80vw);
-    transform: translateX(-50%);
+    inset: -1.4rem -0.5rem auto auto;
+    width: calc(100% - 1rem);
+    height: calc(100% + 2.4rem);
   }
 }
 
