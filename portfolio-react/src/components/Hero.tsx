@@ -13,18 +13,16 @@ const Hero: React.FC = () => {
         <ThreeScene />
       </Suspense>
 
-<div className="container px-4 sm:px-6 md:px-10 lg:px-16 relative z-10 grid gap-8 py-16 sm:py-20 lg:grid-cols-2 lg:items-start">        <div className="hero-copy">
+<div className="container px-4 sm:px-6 md:px-10 lg:px-16 relative z-10 grid gap-8 py-16 sm:py-20 lg:grid-cols-2 lg:items-start">       <div className="hero-copy text-center lg:text-left mx-auto max-w-2xl">
           <span className="section-kicker hero-kicker">Portfolio 2026 / Full-stack engineering</span>
-<h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">            <span className="hero-line hero-line-light">Build bold.</span>
+<h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-center lg:text-left">          <span className="hero-line hero-line-light">Build bold.</span>
             <span className="hero-line hero-line-accent">Ship clean.</span>
            </h1>
-          <p className="section-copy hero-description mt-7 max-w-2xl text-base sm:text-lg">
-            {profile.headline} I work across frontend, backend, UI thinking, and problem solving, and I am actively looking for
+<p className="mt-7 max-w-2xl text-base sm:text-lg text-center lg:text-left mx-auto">            {profile.headline} I work across frontend, backend, UI thinking, and problem solving, and I am actively looking for
             internships and entry-level SDE opportunities.
           </p>
 
-          <div className="hero-actions mt-9 flex flex-col gap-4 sm:flex-row">
-            <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" className="btn primary">
+<div className="mt-9 flex flex-col gap-4 sm:flex-row justify-center lg:justify-start items-center">            <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" className="btn primary">
               Download Resume
               <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v10m0 0 4-4m-4 4-4-4M5 19h14" />
@@ -38,7 +36,7 @@ const Hero: React.FC = () => {
             </a>
           </div>
 
-<div className="mt-10 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">            {heroMetrics.map((metric) => (
+<div className="mt-10 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 text-center">           {heroMetrics.map((metric) => (
               <div key={metric.label} data-tilt className="metric-card">
                 <p className="metric-value">{metric.value}</p>
                 <p className="metric-label">{metric.label}</p>
