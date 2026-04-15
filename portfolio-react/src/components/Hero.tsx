@@ -14,7 +14,6 @@ const Hero: React.FC = () => {
       </Suspense>
 
 <div className="container px-4 sm:px-6 md:px-10 lg:px-16 relative z-10 grid gap-8 py-16 sm:py-20 lg:grid-cols-2 lg:items-start">       <div className="hero-copy text-center lg:text-left mx-auto max-w-2xl">
-          <span className="section-kicker hero-kicker">Portfolio 2026 / Full-stack engineering</span>
 <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-center lg:text-left">          <span className="hero-line hero-line-light">Build bold.</span>
             <span className="hero-line hero-line-accent">Ship clean.</span>
            </h1>

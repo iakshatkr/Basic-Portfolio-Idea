@@ -71,8 +71,10 @@ p {
 }
 
 .container {
-  width: min(100% - 2rem, var(--container));
-  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 16px;   /* THIS FIXES CENTERING */
 }
 
 .section {
