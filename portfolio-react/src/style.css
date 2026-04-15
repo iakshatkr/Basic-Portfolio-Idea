@@ -274,7 +274,7 @@ p {
 
 .hero-layout {
   align-items: start;
-  width: min(100% - 1.5rem, 1360px);
+  width: 100%;
   column-gap: clamp(4rem, 7vw, 7.5rem);
 }
 
@@ -868,7 +868,7 @@ p {
 
 }
 
-@media (max-width: 768pxz) {
+@media (max-width: 768px) {
   .hero-copy {
   max-width: 100%;
 }
@@ -877,7 +877,6 @@ p {
   align-items: center;
 }
   .container {
-    width: min(100% - 1.25rem, var(--container));
   }
 
   .section {
@@ -885,7 +884,7 @@ p {
   }
 
   .hero-section {
-    padding-top: 90rem;
+    padding-top: 6rem;
   }
 
   .three-scene-canvas {
