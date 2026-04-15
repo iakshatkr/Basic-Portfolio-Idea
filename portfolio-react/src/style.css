@@ -21,6 +21,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-timeline: smooth;           /* experimental, but getting good support */
 }
 
 body {

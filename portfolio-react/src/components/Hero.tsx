@@ -5,8 +5,7 @@ const ThreeScene = lazy(() => import('./ThreeScene'));
 
 const Hero: React.FC = () => {
   return (
-    <section className="hero-section relative isolate flex min-h-screen items-center overflow-hidden">
-      <div className="hero-noise" aria-hidden="true"></div>
+<section className="relative isolate flex min-h-screen items-center overflow-hidden px-4">      <div className="hero-noise" aria-hidden="true"></div>
       <div className="hero-orb hero-orb-a" aria-hidden="true"></div>
       <div className="hero-orb hero-orb-b" aria-hidden="true"></div>
 
@@ -14,11 +13,9 @@ const Hero: React.FC = () => {
         <ThreeScene />
       </Suspense>
 
-      <div className="container hero-layout relative z-10 grid gap-8 py-20 sm:gap-10 sm:py-24 lg:grid-cols-[1fr_1fr] lg:items-start">
-        <div className="hero-copy">
+<div className="container px-4 sm:px-6 md:px-10 lg:px-16 relative z-10 grid gap-8 py-16 sm:py-20 lg:grid-cols-2 lg:items-start">        <div className="hero-copy">
           <span className="section-kicker hero-kicker">Portfolio 2026 / Full-stack engineering</span>
-          <h1 className="hero-title mt-6">
-            <span className="hero-line hero-line-light">Build bold.</span>
+<h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">            <span className="hero-line hero-line-light">Build bold.</span>
             <span className="hero-line hero-line-accent">Ship clean.</span>
            </h1>
           <p className="section-copy hero-description mt-7 max-w-2xl text-base sm:text-lg">
@@ -41,8 +38,7 @@ const Hero: React.FC = () => {
             </a>
           </div>
 
-          <div className="hero-metrics mt-10 grid gap-4 sm:grid-cols-3">
-            {heroMetrics.map((metric) => (
+<div className="mt-10 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">            {heroMetrics.map((metric) => (
               <div key={metric.label} data-tilt className="metric-card">
                 <p className="metric-value">{metric.value}</p>
                 <p className="metric-label">{metric.label}</p>
@@ -51,8 +47,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative hero-panel-wrap">
-          <div data-tilt className="showcase-panel hero-panel">
+<div className="relative mt-10 lg:mt-0">          <div data-tilt className="showcase-panel hero-panel">
             <span className="section-kicker">Current positioning</span>
             <h2 className="mt-4 text-2xl font-bold text-white sm:text-3xl">Resume-backed profile with product, community, and engineering depth.</h2>
             <p className="section-copy mt-4">
