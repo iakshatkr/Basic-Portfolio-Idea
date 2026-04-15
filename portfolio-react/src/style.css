@@ -21,7 +21,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-timeline: smooth;           /* experimental, but getting good support */
 }
 
 body {
@@ -280,16 +279,14 @@ p {
 .hero-copy {
   align-self: start;
   padding-top: clamp(1rem, 3vw, 2.5rem);
-  max-width: 33rem;
-  padding-right: clamp(0.75rem, 1.8vw, 1.75rem);
+  max-width: 100%;
+  padding-right: 0;
 }
 
 .hero-title {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 0.18em;
-  max-width: 29rem;
+  align-items: center;
 }
 
 .hero-line {
@@ -870,6 +867,13 @@ p {
 }
 
 @media (max-width: 640px) {
+  .hero-copy {
+  max-width: 100%;
+}
+
+.hero-title {
+  align-items: center;
+}
   .container {
     width: min(100% - 1.25rem, var(--container));
   }
