@@ -74,7 +74,8 @@ p {
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0 16px;   /* THIS FIXES CENTERING */
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .section {
@@ -876,8 +877,6 @@ p {
 .hero-title {
   align-items: center;
 }
-  .container {
-  }
 
   .section {
     padding: 3.5rem 0;
@@ -905,7 +904,7 @@ p {
   }
 
   .hero-title {
-    width: auto;
+    width: auto; 
     align-items: center !important;
     max-width: 100%;
     margin-inline: auto;
