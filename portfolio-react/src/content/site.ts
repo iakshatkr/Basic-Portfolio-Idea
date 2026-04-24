@@ -1,9 +1,9 @@
 export const profile = {
   name: 'Akshat Kumar',
-  role: 'Full-Stack Developer',
-  headline: 'Full-stack developer building responsive products, strong frontend experiences, and practical backend systems.',
+  role: 'Software Developer',
+  headline: 'Software developer focused on full-stack products, backend systems, and performance-aware web experiences.',
   summary:
-    'Final-year B.Tech Computer Science student at Sarala Birla University with experience across web development, UI/UX, community leadership, and product-focused full-stack engineering.',
+    'Final-year B.Tech Computer Science student with internship and leadership experience, plus hands-on work in full-stack development, API systems, and retrieval-augmented AI applications.',
   location: 'Ranchi, Jharkhand, India',
   availability: 'Open to internships and entry-level SDE roles',
   email: 'akshat04kumar@gmail.com',
@@ -11,86 +11,91 @@ export const profile = {
   github: 'https://github.com/iakshatkr',
   leetcode: 'https://leetcode.com/u/iakshatkr/',
   linkedin: 'https://www.linkedin.com/in/akshatkr7/',
-  twitter: 'https://x.com/iaks001',
+  twitter: '',
   resumeUrl: '/Akshat-Kumar-Resume.pdf',
 };
 
 export const heroMetrics = [
-  { value: 'DSA', label: 'Problem solving and core practice' },
-  { value: '1', label: 'Industry internship completed' },
+  { value: '10+', label: 'REST APIs handled in production-style workflows' },
+  { value: '50+', label: 'Technical documents indexed in a RAG pipeline' },
   { value: '2026', label: 'B.Tech graduation year' },
 ];
 
 export const tickerItems = [
-  'React.js',
-  'JavaScript ES6+',
+  'React',
   'Node.js',
   'Express.js',
   'MongoDB',
-  'Firebase',
+  'JWT Authentication',
   'REST APIs',
-  'UI / UX',
+  'Python',
+  'RAG',
+  'LLM APIs',
+  'FAISS',
+  'Mapbox',
+  'Rate Limiting Middleware',
   'Docker Basics',
-  'GitHub',
+  'Postman',
 ];
 
 export const quickHighlights = [
   {
-    label: 'Current focus',
-    value: 'Full-stack products, responsive UI, and better engineering storytelling',
+    label: 'Internship impact',
+    value: 'Reduced NGO platform bounce rate from 70% to 45%',
   },
   {
-    label: 'Leadership',
-    value: 'Visual Media Head at Google Developer Student Club',
+    label: 'Community leadership',
+    value: 'Led visual media strategy for 10+ technical events at GDSC',
   },
   {
-    label: 'Base',
-    value: 'Ranchi, Jharkhand, with remote-friendly availability',
+    label: 'Current build focus',
+    value: 'Backend APIs, access control, and retrieval-augmented applications',
   },
 ];
 
 export const focusAreas = [
   {
-    title: 'Full-Stack Product Development',
+    title: 'Backend and API Engineering',
     description:
-      'Building user-facing experiences in React while wiring backend logic, APIs, authentication, and data layers that support real product flows.',
+      'Designing and implementing Express-based APIs, authentication flows, and middleware that support reliable, role-driven product behavior.',
   },
   {
-    title: 'Frontend Polish and UI Thinking',
+    title: 'Full-Stack Product Delivery',
     description:
-      'Bringing structure, layout, and visual clarity into interfaces so they feel clean, responsive, and easier to trust at first glance.',
+      'Building complete web workflows from frontend interfaces to backend services with booking logic, data models, and operational endpoints.',
   },
   {
-    title: 'Problem Solving Mindset',
+    title: 'Applied AI Retrieval Systems',
     description:
-      'Applying DSA practice and debugging discipline to ship cleaner implementations and make technical decisions with more confidence.',
+      'Developing RAG pipelines with document ingestion, vector indexing, and context-aware retrieval to improve answer relevance.',
   },
 ];
 
 export const experience = [
   {
     company: 'Vikas Bharti',
-    title: 'Tech Consultant and Web Developer Intern',
-    duration: 'May 2024 - July 2024',
+    title: 'Software Developer Intern',
+    duration: 'May 2024 - Jul 2024',
     location: 'Ranchi, Jharkhand',
     link: 'https://www.vikasbharti.in/',
     bullets: [
-      'Collaborated with a non-profit team to revamp and optimize their web platform.',
-      'Enhanced the frontend architecture using HTML, CSS, JavaScript, and Node.js to improve usability and accessibility.',
-      'Focused on responsive UI design, cross-device compatibility, and integration of dynamic data endpoints through REST APIs.',
+      'Implemented responsive web improvements for the NGO platform, optimized for low-bandwidth (3G) environments.',
+      'Improved engagement by reducing bounce rate from 70% to 45% through performance and UX updates.',
+      'Developed a Node.js + MongoDB backend for beneficiary data across 5-7 programs and integrated RESTful APIs for structured frontend-backend communication.',
+      'Applied lazy loading and image compression, reducing page load time by 25-30% and supporting initiatives reaching 5000+ beneficiaries.',
     ],
   },
   {
     company: 'Google Developer Student Club',
     title: 'Visual Media Head',
-    duration: 'September 2024 - June 2025',
+    duration: 'Sep 2024 - Jun 2025',
     location: 'Ranchi, Jharkhand',
     link: 'https://gdg.community.dev/gdg-on-campus-sarala-birla-university-ranchi-india/',
     bullets: [
-      'Led visual media and content design initiatives for the student developer community.',
-      'Managed technical documentation, video editing, promotional content, and overall design strategy.',
-      'Coordinated developer-focused events and speaker sessions that increased campus engagement.',
-      'Worked with startup founders on social media campaigns to improve product and app visibility across platforms.',
+      'Led visual media and content strategy for 10+ technical events, driving a 40-50% increase in student engagement.',
+      'Collaborated with sponsors and startup teams to promote developer tools and applications through guided sessions and campaigns.',
+      'Enabled 100+ students to explore and adopt platforms through structured outreach and technical content promotion.',
+      'Used analytics and content tools to optimize campaign performance and align content with developer workflows.',
     ],
   },
 ];
@@ -98,66 +103,69 @@ export const experience = [
 export const skillGroups = [
   {
     title: 'Languages',
-    items: ['C', 'C++', 'JavaScript ES6+', 'SQL'],
+    items: ['C', 'C++', 'JavaScript (ES6+)', 'SQL', 'Python'],
   },
   {
-    title: 'Frameworks and Stack',
-    items: ['HTML5', 'CSS3', 'React', 'Node.js', 'Express', 'MongoDB', 'Firebase'],
+    title: 'Backend and APIs',
+    items: ['Node.js', 'Express.js', 'REST APIs', 'JWT Authentication', 'Middleware', 'API Design'],
   },
   {
-    title: 'Developer Tools',
-    items: ['Git', 'GitHub', 'VS Code', 'Cursor', 'Chrome DevTools', 'Docker Basics'],
+    title: 'Databases and AI/ML',
+    items: ['MongoDB', 'Mongoose', 'RAG', 'LLM APIs', 'Vector Search (FAISS)', 'Embeddings'],
   },
   {
-    title: 'Design and Product',
-    items: ['UI / UX', 'Figma', 'Adobe XD', 'Responsive Design', 'Content Strategy'],
+    title: 'Tools and Workflow',
+    items: ['Git', 'GitHub', 'VS Code', 'Postman', 'Docker (Basics)', 'Chrome DevTools'],
   },
 ];
 
 export const projects = [
   {
-    title: 'GreenVolt Nexus',
-    category: 'Clean Tech',
-    status: 'Flagship build',
+    title: 'Greenvolt Nexus',
+    category: 'EV Platform',
+    status: 'Jan 2025 - Sep 2025',
     description:
-      'A B2C solar-powered EV charging platform designed around slot booking, payment flow, and a responsive product experience.',
+      'Full-stack EV charging platform built for real-time station discovery, booking flows, and role-based operations.',
     highlights: [
-      'Built a web app for real-time slot booking and payment-driven charging workflows.',
-      'Developed the frontend with React.js and backend services with Node.js and Express.js.',
-      'Integrated secure authentication and transaction-oriented flows using Firebase and JWT-based patterns.',
+      'Designed and developed the platform using React, Node.js, Express, and MongoDB across Admin, Owner, and User roles.',
+      'Implemented JWT authentication and role-based access control to secure workflows and endpoint access.',
+      'Built booking logic with slot validation and conflict detection to prevent double-bookings.',
+      'Integrated Mapbox-based analytics dashboards and managed 10+ REST API endpoints for bookings, payments, and user operations.',
     ],
-    stack: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Node.js', 'Firebase / JWT'],
+    stack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Mapbox'],
     codeUrl: '',
     liveUrl: '',
   },
   {
-    title: 'GrabMint',
-    category: 'E-commerce',
-    status: 'Full-stack build',
+    title: 'RAG Document Assistant',
+    category: 'AI / Retrieval',
+    status: 'Aug 2025 - Oct 2025',
     description:
-      'A dropshipping-oriented commerce platform with product browsing, cart, checkout flow, and order-tracking considerations.',
+      'Context-aware RAG assistant that queries technical documents using vector retrieval and LLM-powered response generation.',
     highlights: [
-      'Built a full-stack e-commerce experience for product catalog, cart flow, and checkout.',
-      'Created a responsive frontend with React.js and backed it with scalable Node.js and Express APIs.',
-      'Integrated payment flow ideas and structured MongoDB models for users, products, orders, and transactions.',
+      'Built a retrieval pipeline for 50+ documents using LLM APIs.',
+      'Implemented ingestion, chunking, and embedding workflows, generating 500+ chunks stored in FAISS.',
+      'Designed query flow from question to top-3 retrieval and final response for improved relevance.',
+      'Optimized chunking and similarity search settings for stronger answer quality.',
     ],
-    stack: ['React.js', 'Node.js', 'MongoDB', 'Firebase', 'Razorpay'],
+    stack: ['Python', 'FAISS', 'LangChain', 'LLM APIs'],
     codeUrl: '',
     liveUrl: '',
   },
   {
-    title: 'Portfolio Platform',
-    category: 'Personal Brand',
-    status: 'Shipping now',
+    title: 'API Throttling Engine',
+    category: 'Backend Infrastructure',
+    status: 'Dec 2025 - Jan 2026',
     description:
-      'This portfolio itself is being rebuilt as a premium React experience with stronger storytelling, polished visuals, and deploy-ready metadata.',
+      'Rate-limiting middleware system to control traffic, prevent API abuse, and maintain stable backend performance.',
     highlights: [
-      'Migrated the app from Create React App to Vite for a cleaner production workflow.',
-      'Introduced a more premium landing page, content system, and lazy-loaded Three.js hero.',
-      'Added share-ready metadata, downloadable resume support, and cleaner professional positioning.',
+      'Developed fixed-window rate limiting in Node.js and Express.',
+      'Enforced 100 requests per minute per user with efficient in-memory tracking.',
+      'Implemented request flow for validation, limit checks, and allow/block behavior.',
+      'Designed for consistent performance under concurrent request loads.',
     ],
-    stack: ['React', 'Vite', 'TypeScript', 'Three.js', 'Tailwind CSS'],
-    codeUrl: 'https://github.com/iakshatkr/Basic-Portfolio-Idea',
+    stack: ['Node.js', 'Express.js', 'Middleware', 'In-Memory Caching'],
+    codeUrl: '',
     liveUrl: '',
   },
 ];
@@ -166,36 +174,30 @@ export const education = {
   institution: 'Sarala Birla University, Ranchi',
   degree: 'B.Tech in Computer Science and Engineering',
   duration: '2022 - 2026',
-  score: 'CGPA 6.9',
+  score: 'Relevant Coursework: OOP, OS, Cloud Computing',
   location: 'Ranchi, Jharkhand',
 };
 
 export const certifications = [
   {
-    title: 'Introduction to Programming Using Python',
-    issuer: 'HCL GUVI',
-    link: 'https://www.guvi.in/share-certificate/sm22l6k99191O63NV1',
+    title: 'Object-Oriented Programming',
+    issuer: 'Relevant Coursework',
+    link: 'https://www.sbu.ac.in/',
   },
   {
-    title: 'Hacfest Hackathon',
-    issuer: 'IIT (ISM) Dhanbad',
-    link: 'https://www.linkedin.com/in/akshatkr7/details/certifications/1748153330753/single-media-viewer/?profileId=ACoAAEHvpvQB1frPyBR_bI1eerRvLU6S4DgtFOo',
+    title: 'Operating Systems',
+    issuer: 'Relevant Coursework',
+    link: 'https://www.sbu.ac.in/',
   },
   {
-    title: 'AceHack 4.0 Hackathon',
-    issuer: 'UEM Jaipur',
-    link: 'https://drive.google.com/drive/u/1/folders/1eaTgH1rI7EGsrw6vV-lD0j53pQtk-iG3',
-  },
-  {
-    title: 'NISM Certifications',
-    issuer: 'SEBI',
-    link: 'https://www.linkedin.com/in/akshatkr7/details/certifications/1742385576462/single-media-viewer/?profileId=ACoAAEHvpvQB1frPyBR_bI1eerRvLU6S4DgtFOo',
+    title: 'Cloud Computing',
+    issuer: 'Relevant Coursework',
+    link: 'https://www.sbu.ac.in/',
   },
 ];
 
 export const socialLinks = [
   { label: 'GitHub', href: profile.github },
   { label: 'LinkedIn', href: profile.linkedin },
-  { label: 'X / Twitter', href: profile.twitter },
   { label: 'LeetCode', href: profile.leetcode },
 ];
