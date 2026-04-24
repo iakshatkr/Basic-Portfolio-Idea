@@ -25,6 +25,7 @@ html {
 
 body {
   margin: 0;
+  width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
   background:
@@ -274,7 +275,8 @@ p {
 }
 
 .hero-layout {
-  align-items: start;
+  align-items: center;
+  justify-items: center;
   width: 100%;
   column-gap: clamp(4rem, 7vw, 7.5rem);
 }
@@ -828,7 +830,7 @@ p {
   .hero-layout {
     min-height: calc(100vh - 8rem);
     grid-template-columns: minmax(0, 33rem) minmax(32rem, 34rem);
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .hero-title {
@@ -856,13 +858,14 @@ p {
     padding-right: 0;
   }
 
-  .hero-layout {
+   .hero-layout {
     grid-template-columns: minmax(0, 1fr);
-    width: min(100% - 2rem, 100%);
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
     justify-items: center;
     row-gap: 2rem;
   }
-
   .hero-panel-wrap {
     padding-top: 0;
   }
