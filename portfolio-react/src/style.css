@@ -28,7 +28,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at top left, rgba(181, 255, 125, 0.12), transparent 28%),
+    radial-gradient(circle at center, rgba(181, 255, 125, 0.12), transparent 28%),
     radial-gradient(circle at 85% 12%, rgba(255, 207, 122, 0.12), transparent 20%),
     linear-gradient(180deg, #0a0c0b 0%, #090b0a 45%, #0b0e0d 100%);
   color: var(--text);
